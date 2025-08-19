@@ -23,7 +23,6 @@ var current_gap: float
 
 
 func _ready() -> void:
-	if Connection.is_server(): return
 	default_sin_effect = get_instance_shader_parameter(SIN_EFFECT)
 	default_color = get_instance_shader_parameter(ALBEDO)
 	default_gap = get_instance_shader_parameter(GAP)

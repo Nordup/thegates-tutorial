@@ -9,10 +9,6 @@ func _on_portal_entered(body: Node3D):
 	if not body is Player: return
 	play_enter_audio()
 	
-	if body.get_multiplayer_authority() != multiplayer.get_unique_id() and Connection.is_peer_connected:
-		hide_client_body(body)
-		return
-	
 	print("Portal_entered: " + url)
 	await get_tree().create_timer(0.3).timeout
 	
@@ -24,13 +20,3 @@ func _on_portal_entered(body: Node3D):
 
 func play_enter_audio():
 	$AudioStreamPlayer3D.play()
-
-
-func hide_client_body(body: Node3D):
-	await get_tree().create_timer(0.05).timeout
-	body.visible = false
-	
-	# In case of interpolation error, show body if server hasn't kicked out the client
-	await get_tree().create_timer(network_timeout + 1.0).timeout
-	if is_instance_valid(body):
-		body.visible = true

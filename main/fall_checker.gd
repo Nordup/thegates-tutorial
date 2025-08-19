@@ -8,8 +8,6 @@ var timer : Timer
 
 
 func _ready() -> void:
-	if Connection.is_server(): return
-	
 	timer = Timer.new()
 	add_child(timer)
 	timer.start(1)
@@ -17,5 +15,5 @@ func _ready() -> void:
 
 
 func check_fallen() -> void:
-	if player_spawner.local_player.global_position.y < fall_height:
+	if player_spawner.player.global_position.y < fall_height:
 		player_spawner.respawn_local_player()

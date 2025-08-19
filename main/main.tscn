@@ -25,19 +25,18 @@ events = ExtResource("5_irmxe")
 [node name="PlayerSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("4_edyrb")
 player_scene = ExtResource("5_wb2xi")
+spawn_path = NodePath("../Players")
 spawn_points = NodePath("../HubLevel/SpawnPoints")
 
 [node name="Players" type="Node3D" parent="."]
 
-[node name="FallChecker" type="Node3D" parent="."]
+[node name="FallChecker" type="Node3D" parent="." node_paths=PackedStringArray("player_spawner")]
 script = ExtResource("9_vk48u")
 fall_height = -20.0
+player_spawner = NodePath("../PlayerSpawner")
 
 [node name="HubLevel" parent="." instance=ExtResource("10_acu3x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="GateTerminal" parent="HubLevel" index="6"]
-synced_url = null
 
 [editable path="UI"]
 [editable path="HubLevel"]

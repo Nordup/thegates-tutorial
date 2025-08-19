@@ -21,13 +21,12 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
-[node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("interactable", "terminal_info", "stand", "portal", "synchronizer")]
+[node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("interactable", "terminal_info", "stand", "portal")]
 script = ExtResource("1_36vgj")
 interactable = NodePath("InteractableTerminal")
 terminal_info = NodePath("SubViewport/Terminal")
 stand = NodePath("StandBase2")
 portal = NodePath("Portal")
-synchronizer = NodePath("")
 
 [node name="Portal" parent="." instance=ExtResource("1_8xacv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.1, 0)

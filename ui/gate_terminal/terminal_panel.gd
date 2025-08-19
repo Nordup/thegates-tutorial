@@ -10,8 +10,6 @@ var current: InteractableTerminal
 
 
 func _ready() -> void:
-	if Connection.is_server(): return
-	
 	interactable_events.on_entered.connect(on_interactable_entered)
 	interactable_events.on_exited.connect(on_interactable_exited)
 	root.pressed.connect(hide_panel)
