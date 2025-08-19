@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="WelcomePage"
+config/name="TheGates Tutorial"
 config/tags=PackedStringArray("gate")
 run/main_scene="res://main/main.tscn"
 run/disable_stderr=true
