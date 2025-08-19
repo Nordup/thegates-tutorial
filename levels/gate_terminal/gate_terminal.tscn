@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0c8n3affoiyu"]
+[gd_scene load_steps=10 format=3 uid="uid://b0c8n3affoiyu"]
 
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="1_8xacv"]
 [ext_resource type="Script" path="res://levels/gate_terminal/gate_terminal.gd" id="1_36vgj"]
@@ -21,18 +21,13 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8g2s0"]
-properties/0/path = NodePath(".:synced_url")
-properties/0/spawn = true
-properties/0/replication_mode = 2
-
 [node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("interactable", "terminal_info", "stand", "portal", "synchronizer")]
 script = ExtResource("1_36vgj")
 interactable = NodePath("InteractableTerminal")
 terminal_info = NodePath("SubViewport/Terminal")
 stand = NodePath("StandBase2")
 portal = NodePath("Portal")
-synchronizer = NodePath("MultiplayerSynchronizer")
+synchronizer = NodePath("")
 
 [node name="Portal" parent="." instance=ExtResource("1_8xacv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.1, 0)
@@ -73,8 +68,5 @@ transform = Transform3D(0.499615, 0, 0, 0, 0.499615, 0, 0, 0, 0.499615, -4.87384
 [node name="InteractableTerminal" parent="." instance=ExtResource("7_hnqun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.874, 0, -2)
 text = "Choose gate"
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_8g2s0")
 
 [editable path="Portal"]

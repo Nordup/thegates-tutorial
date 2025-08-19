@@ -12,7 +12,6 @@ var new_id_max: int
 
 
 func _ready() -> void:
-	if Connection.is_server(): return
 	all_gates()
 
 
@@ -21,14 +20,14 @@ func all_gates() -> void:
 	
 	var gates = JSON.parse_string(result_str)
 	if gates == null or gates.is_empty():
-		Debug.log_msg("No gates found")
+		print("No gates found")
 		return
 	
 	var new_gates = find_new_gates(gates)
 	gates = sort_gates(gates, new_gates)
 	for gate in gates:
 		if gate["url"] == exclude_url: continue
-		Debug.log_msg(gate["url"])
+		print(gate["url"])
 		
 		var result: SearchResult = result_scene.instantiate()
 		result.fill(gate, panel, gate in new_gates)
@@ -40,10 +39,10 @@ func all_gates_request() -> void:
 	var callback = func(_result, code, _headers, body):
 		if code == 200:
 			result_str = body.get_string_from_utf8()
-		else: Debug.log_msg("Request all_gates failed. Code " + str(code))
+		else: print("Request all_gates failed. Code " + str(code))
 	
 	var err = await Backend.request(url, callback)
-	if err != HTTPRequest.RESULT_SUCCESS: Debug.log_msg("Cannot send request all_gates")
+	if err != HTTPRequest.RESULT_SUCCESS: print("Cannot send request all_gates")
 
 
 func find_new_gates(gates: Array) -> Array:

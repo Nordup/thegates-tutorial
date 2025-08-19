@@ -38,5 +38,5 @@ func _input(event: InputEvent) -> void:
 	if current == blocked: return
 	
 	if event.is_action_pressed("interact"):
-		Debug.log_msg("pressed interact " + current.name)
+		print("pressed interact " + current.name)
 		current.interact()

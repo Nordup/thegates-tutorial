@@ -12,7 +12,7 @@ var current_desc: RichTextLabel
 func set_info(gate_url: String) -> bool:
 	var config_path = await FileDownloader.download(gate_url, 10)
 	if config_path.is_empty():
-		Debug.log_msg("Cannot download gate config")
+		print("Cannot download gate config")
 		await get_tree().process_frame
 		return false
 	

@@ -13,7 +13,7 @@ func _on_portal_entered(body: Node3D):
 		hide_client_body(body)
 		return
 	
-	Debug.log_msg("Portal_entered: " + url)
+	print("Portal_entered: " + url)
 	await get_tree().create_timer(0.3).timeout
 	
 	if get_tree().has_method("send_command"):

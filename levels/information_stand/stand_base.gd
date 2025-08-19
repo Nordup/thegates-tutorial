@@ -18,7 +18,6 @@ func _exit_tree() -> void:
 
 
 func render() -> void:
-	if Connection.is_server(): return
 	if not is_instance_valid(viewport): return
 	if viewport == null: return
 	
@@ -59,4 +58,4 @@ func clear() -> void:
 
 
 func try_print(text: Variant) -> void:
-	if print_log: Debug.log_msg(text)
+	if print_log: print(text)
