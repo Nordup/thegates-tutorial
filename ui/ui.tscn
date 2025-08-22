@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=8 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="5_7d7f7"]
 [ext_resource type="PackedScene" uid="uid://byfgsmntqeuj2" path="res://ui/gate_terminal/terminal_panel.tscn" id="5_ii114"]
 [ext_resource type="PackedScene" uid="uid://md4ik7uho32v" path="res://ui/interactable/interactable_panel.tscn" id="6_mid3e"]
 [ext_resource type="Script" path="res://ui/hints/hint_manager.gd" id="7_cx6s0"]
+[ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd_movement.tscn" id="7_r8w35"]
 
-[sub_resource type="Resource" id="Resource_mvfjr"]
+[sub_resource type="Resource" id="Resource_jq7hn"]
 script = ExtResource("5_7d7f7")
-id = &""
+id = &"wasd_movement"
+scene = ExtResource("7_r8w35")
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -33,7 +35,10 @@ mouse_mode = NodePath("../MouseMode")
 
 [node name="HintManager" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 0
-mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("7_cx6s0")
-hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_mvfjr")])
+hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn")])

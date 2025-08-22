@@ -1,6 +1,7 @@
-extends Node
+extends Control
 # class_name HintManager
 
+@export var events: HintEvents
 @export var hints: Array[HintDefinition] = []
 
 var _id_to_scene: Dictionary = {}
