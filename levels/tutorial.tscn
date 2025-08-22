@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8hgjo1tpct7f"]
+[gd_scene load_steps=12 format=3 uid="uid://b8hgjo1tpct7f"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="9_owteq"]
 [ext_resource type="PackedScene" uid="uid://bk838kgidwy6r" path="res://addons/kenney_nature-kit/cliff_halfCorner_rock.glb" id="10_ly83i"]
 [ext_resource type="PackedScene" uid="uid://c4epmvxwfahq4" path="res://addons/kenney_nature-kit/cliff_half_rock.glb" id="12_uk1v0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_chccw"]
+height = 1.0
+radius = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7h7q4"]
+size = Vector3(7.97516, 2.47473, 7.99609)
 
 [node name="Tutorial" type="Node3D"]
 
@@ -89,6 +96,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 13)
 [node name="Portal" parent="." instance=ExtResource("8_xxk56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71032, 23)
 
-[node name="HintArea" parent="." instance=ExtResource("9_owteq")]
+[node name="HintAreaWASD" parent="." instance=ExtResource("9_owteq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
-hint_id = &"wasd_movement"
+hint_id = &"wasd"
+
+[node name="HintAreaJump" parent="." instance=ExtResource("9_owteq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113341, 0, 13.2145)
+hint_id = &"jump"
+
+[node name="CollisionShape3D" parent="HintAreaJump" index="0"]
+shape = SubResource("CylinderShape3D_chccw")
+
+[node name="HintAreaPortal" parent="." instance=ExtResource("9_owteq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126699, 1.8, 20.0571)
+hint_id = &"portal"
+
+[node name="CollisionShape3D" parent="HintAreaPortal" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127777, 1.23737, -0.0432129)
+shape = SubResource("BoxShape3D_7h7q4")
+
+[editable path="HintAreaJump"]
+[editable path="HintAreaPortal"]

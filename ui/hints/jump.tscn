@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu37qr3fl4hkn"]
+
+[ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_sb3y7"]
+[ext_resource type="Texture2D" uid="uid://brllhaowk3gvj" path="res://assets/textures/space.png" id="2_wmikc"]
+
+[node name="WasdMovement" instance=ExtResource("1_sb3y7")]
+
+[node name="Label" parent="Control" index="1"]
+text = "Press space to jump"
+
+[node name="TextureRect" parent="Control/WASD" index="0"]
+texture = ExtResource("2_wmikc")

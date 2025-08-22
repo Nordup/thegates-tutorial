@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bso1l3h4eqies"]
+
+[ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_k3gt6"]
+[ext_resource type="Texture2D" uid="uid://crtuhm177363m" path="res://assets/textures/portal.png" id="2_sfdey"]
+
+[node name="WasdMovement" instance=ExtResource("1_k3gt6")]
+
+[node name="Label" parent="Control" index="1"]
+text = "Go through the portal"
+
+[node name="TextureRect" parent="Control/WASD" index="0"]
+texture = ExtResource("2_sfdey")

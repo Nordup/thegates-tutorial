@@ -1,6 +1,7 @@
 extends Area3D
 class_name HintArea3D
 
+@export var events: HintEvents
 @export var hint_id: StringName
 
 var _has_fired: bool = false
@@ -15,7 +16,7 @@ func _on_body_entered(body: Node) -> void:
 	if _has_fired:
 		return
 	if body is Player:
-		HintManager.request_show(hint_id)
+		events.show_hint_emit(hint_id)
 		_has_fired = true
 
 
@@ -23,4 +24,4 @@ func _on_body_exited(body: Node) -> void:
 	if not _has_fired:
 		return
 	if body is Player:
-		HintManager.request_hide_and_consume(hint_id)
+		events.hide_hint_emit(hint_id)

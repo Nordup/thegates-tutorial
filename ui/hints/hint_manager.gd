@@ -18,9 +18,13 @@ func _ready() -> void:
 		if def.id == &"" or def.scene == null:
 			continue
 		_id_to_scene[def.id] = def.scene
+	
+		events.show_hint.connect(show_hint)
+	events.hide_hint.connect(hide_hint)
 
 
-func request_show(hint_id: StringName) -> void:
+func show_hint(hint_id: StringName) -> void:
+	print("try show hint: ", hint_id)
 	if _consumed_ids.get(hint_id, false):
 		return
 	if _current_id == hint_id:
@@ -39,7 +43,8 @@ func request_show(hint_id: StringName) -> void:
 	ui.visible = true
 
 
-func request_hide_and_consume(hint_id: StringName) -> void:
+func hide_hint(hint_id: StringName) -> void:
+	print("try hide hint: ", hint_id)
 	if _current_id == hint_id:
 		_clear_current()
 	_consumed_ids[hint_id] = true
