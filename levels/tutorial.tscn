@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8hgjo1tpct7f"]
+[gd_scene load_steps=13 format=3 uid="uid://b8hgjo1tpct7f"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
-[ext_resource type="PackedScene" uid="uid://b0c8n3affoiyu" path="res://levels/gate_terminal/gate_terminal.tscn" id="4_snoi3"]
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="3_ktcox"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="5_7i5ax"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="6_8o6qg"]
 [ext_resource type="Texture2D" uid="uid://cmadxr2qxexb7" path="res://assets/textures/wasd.png" id="7_ktetf"]
 [ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="7_ruyuq"]
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="8_xxk56"]
+[ext_resource type="PackedScene" uid="uid://bk838kgidwy6r" path="res://addons/kenney_nature-kit/cliff_halfCorner_rock.glb" id="10_ly83i"]
+[ext_resource type="PackedScene" uid="uid://c4epmvxwfahq4" path="res://addons/kenney_nature-kit/cliff_half_rock.glb" id="12_uk1v0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xodh2"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 0.447059)
+
+[sub_resource type="LabelSettings" id="LabelSettings_owpm2"]
+font = ExtResource("3_ktcox")
+font_size = 34
 
 [node name="Tutorial" type="Node3D"]
 
@@ -24,13 +33,68 @@ stream = ExtResource("2_0plcn")
 volume_db = -23.38
 autoplay = true
 
-[node name="GateTerminal" parent="." instance=ExtResource("4_snoi3")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0.553646, -0.00407207, -9.09847)
-visible = false
-start_url = "https://thegates.io/worlds/devs/snap_games_studio/packing_frenzy.gate"
+[node name="TutorialUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="TutorialUI"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 600.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="TutorialUI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xodh2")
+
+[node name="Label" type="Label" parent="TutorialUI/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -192.0
+offset_right = 451.0
+offset_bottom = -151.0
+grow_vertical = 2
+text = "WASD for movement"
+label_settings = SubResource("LabelSettings_owpm2")
+
+[node name="WASD" type="Control" parent="TutorialUI/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = -95.0
+offset_right = 465.0
+offset_bottom = 95.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="TutorialUI/Control/WASD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ktetf")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SpawnPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
 script = ExtResource("5_7i5ax")
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
@@ -57,36 +121,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23975, 2.69988, 2.4337)
 [node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("7_ruyuq")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
 
-[node name="TutorialUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="Platform" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="WASD" type="Control" parent="TutorialUI"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 131.0
-offset_top = -328.0
-offset_right = 482.0
-offset_bottom = -138.0
-grow_vertical = 0
+[node name="cliff_half_rock9" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 13)
 
-[node name="TextureRect" type="TextureRect" parent="TutorialUI/WASD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_ktetf")
-expand_mode = 1
-stretch_mode = 5
+[node name="cliff_halfCorner_rock3" parent="Platform" instance=ExtResource("10_ly83i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="cliff_half_rock2" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="cliff_halfCorner_rock2" parent="Platform" instance=ExtResource("10_ly83i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 5)
+
+[node name="cliff_half_rock3" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="cliff_half_rock4" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 13)
+
+[node name="cliff_halfCorner_rock4" parent="Platform" instance=ExtResource("10_ly83i")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 0, 17)
+
+[node name="cliff_half_rock5" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 9)
+
+[node name="cliff_half_rock6" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 17)
+
+[node name="cliff_halfCorner_rock5" parent="Platform" instance=ExtResource("10_ly83i")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 17)
+
+[node name="cliff_half_rock7" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 17)
+
+[node name="cliff_half_rock8" parent="Platform" instance=ExtResource("12_uk1v0")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 9)
+
+[node name="cliff_blockHalf_rock3" parent="Platform" instance=ExtResource("7_ruyuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
+
+[node name="cliff_blockHalf_rock4" parent="Platform" instance=ExtResource("7_ruyuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9)
+
+[node name="cliff_blockHalf_rock5" parent="Platform" instance=ExtResource("7_ruyuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 13)
+
+[node name="cliff_blockHalf_rock6" parent="Platform" instance=ExtResource("7_ruyuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 13)
 
 [node name="Portal" parent="." instance=ExtResource("8_xxk56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75989, 0, 13.1362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71032, 23)
