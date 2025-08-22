@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8hgjo1tpct7f"]
+
+[ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
+[ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
+[ext_resource type="PackedScene" uid="uid://b0c8n3affoiyu" path="res://levels/gate_terminal/gate_terminal.tscn" id="4_snoi3"]
+[ext_resource type="Script" path="res://main/spawn_points.gd" id="5_7i5ax"]
+[ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="6_8o6qg"]
+[ext_resource type="Texture2D" uid="uid://cmadxr2qxexb7" path="res://assets/textures/wasd.png" id="7_ktetf"]
+[ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="7_ruyuq"]
+[ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="8_xxk56"]
+
+[node name="Tutorial" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
+shadow_enabled = true
+shadow_opacity = 0.57
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_3c4h5")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0plcn")
+volume_db = -23.38
+autoplay = true
+
+[node name="GateTerminal" parent="." instance=ExtResource("4_snoi3")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0.553646, -0.00407207, -9.09847)
+visible = false
+start_url = "https://thegates.io/worlds/devs/snap_games_studio/packing_frenzy.gate"
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 0)
+script = ExtResource("5_7i5ax")
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70015, 2.6999, -0.668198)
+
+[node name="SpawnPoint2" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93195, 2.6999, -0.6511)
+
+[node name="SpawnPoint3" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95065, 2.6999, 5.4775)
+
+[node name="SpawnPoint4" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71145, 2.6999, 5.4295)
+
+[node name="SpawnPoint5" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59085, 2.6999, 2.3691)
+
+[node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154951, 2.6999, 2.41061)
+
+[node name="SpawnPoint7" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23975, 2.69988, 2.4337)
+
+[node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("7_ruyuq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
+
+[node name="TutorialUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WASD" type="Control" parent="TutorialUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = -328.0
+offset_right = 482.0
+offset_bottom = -138.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="TutorialUI/WASD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ktetf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Portal" parent="." instance=ExtResource("8_xxk56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75989, 0, 13.1362)

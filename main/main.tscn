@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
+[ext_resource type="PackedScene" uid="uid://b8hgjo1tpct7f" path="res://levels/tutorial.tscn" id="8_jb76a"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
-[ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
 
 [node name="Main" type="Node"]
 
@@ -20,13 +20,11 @@ script = ExtResource("1_mexsf")
 script = ExtResource("4_86hc2")
 events = ExtResource("5_irmxe")
 
-[node name="UI" parent="." instance=ExtResource("4_fvou2")]
-
 [node name="PlayerSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("4_edyrb")
 player_scene = ExtResource("5_wb2xi")
 spawn_path = NodePath("../Players")
-spawn_points = NodePath("../HubLevel/SpawnPoints")
+spawn_points = NodePath("../Tutorial/SpawnPoints")
 
 [node name="Players" type="Node3D" parent="."]
 
@@ -35,13 +33,9 @@ script = ExtResource("9_vk48u")
 fall_height = -20.0
 player_spawner = NodePath("../PlayerSpawner")
 
-[node name="HubLevel" parent="." instance=ExtResource("10_acu3x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+[node name="Tutorial" parent="." instance=ExtResource("8_jb76a")]
 
+[node name="UI" parent="." instance=ExtResource("4_fvou2")]
+
+[editable path="Tutorial"]
 [editable path="UI"]
-[editable path="HubLevel"]
-[editable path="HubLevel/Portals/Portal2"]
-[editable path="HubLevel/Portals/Portal3"]
-[editable path="HubLevel/Portals/Portal4"]
-[editable path="HubLevel/Portals/Portal5"]
-[editable path="HubLevel/Portals/Portal7"]

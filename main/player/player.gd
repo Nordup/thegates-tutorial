@@ -32,6 +32,7 @@ class_name Player
 
 func _ready() -> void:
 	_camera_controller.setup(self)
+	call_deferred("_align_orientation_to_camera")
 
 
 func _physics_process(delta: float) -> void:
@@ -131,3 +132,13 @@ func _orient_character_to_direction(direction: Vector3, delta: float, force = fa
 func respawn(spawn_position: Vector3) -> void:
 	global_position = spawn_position
 	velocity = Vector3.ZERO
+	call_deferred("_align_orientation_to_camera")
+
+
+func _align_orientation_to_camera() -> void:
+	var direction := _camera_controller.global_transform.basis.z
+	direction.y = 0.0
+	if direction.length() < 0.001:
+		direction = Vector3.FORWARD
+	_last_strong_direction = direction.normalized()
+	_orient_character_to_direction(_last_strong_direction, 0.0, true)
