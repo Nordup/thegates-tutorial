@@ -1,0 +1,51 @@
+extends Node
+# class_name HintManager
+
+@export var hints: Array[HintDefinition] = []
+
+var _id_to_scene: Dictionary = {}
+var _consumed_ids: Dictionary = {}
+var _current_id: StringName = &""
+var _current_instance: Control = null
+
+
+func _ready() -> void:
+	add_to_group("hint_manager")
+	for def in hints:
+		if def == null:
+			continue
+		if def.id == &"" or def.scene == null:
+			continue
+		_id_to_scene[def.id] = def.scene
+
+
+func request_show(hint_id: StringName) -> void:
+	if _consumed_ids.get(hint_id, false):
+		return
+	if _current_id == hint_id:
+		return
+	_clear_current()
+	var scene: PackedScene = _id_to_scene.get(hint_id)
+	if scene == null:
+		return
+	var ui := scene.instantiate()
+	if ui is Control == false:
+		ui.queue_free()
+		return
+	_current_id = hint_id
+	_current_instance = ui
+	add_child(ui)
+	ui.visible = true
+
+
+func request_hide_and_consume(hint_id: StringName) -> void:
+	if _current_id == hint_id:
+		_clear_current()
+	_consumed_ids[hint_id] = true
+
+
+func _clear_current() -> void:
+	if _current_instance:
+		_current_instance.queue_free()
+	_current_instance = null
+	_current_id = &""

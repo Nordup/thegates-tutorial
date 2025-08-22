@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5u7dcpkitc8y"]
+
+[ext_resource type="Script" path="res://levels/hint_area_3d.gd" id="1_oqp88"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dkew4"]
+height = 1.0
+radius = 1.0
+
+[node name="HintArea" type="Area3D"]
+script = ExtResource("1_oqp88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_dkew4")

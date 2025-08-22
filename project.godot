@@ -29,6 +29,7 @@ driver/mix_rate=48000
 FileDownloader="*res://main/loading/file_downloader.gd"
 Backend="*res://main/backend/backend.gd"
 FileTools="*res://main/loading/file_tools.gd"
+HintManager="*res://ui/hints/hint_manager.tscn"
 
 [display]
 

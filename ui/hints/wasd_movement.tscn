@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://sos3l6aro7ff"]
+
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_s587x"]
+[ext_resource type="Texture2D" uid="uid://cmadxr2qxexb7" path="res://assets/textures/wasd.png" id="2_1mygk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5ovl"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 0.447059)
+
+[sub_resource type="LabelSettings" id="LabelSettings_41vj5"]
+font = ExtResource("1_s587x")
+font_size = 34
+
+[node name="WasdMovement" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 600.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5ovl")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -192.0
+offset_right = 451.0
+offset_bottom = -151.0
+grow_vertical = 2
+text = "WASD for movement"
+label_settings = SubResource("LabelSettings_41vj5")
+
+[node name="WASD" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = -95.0
+offset_right = 465.0
+offset_bottom = 95.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/WASD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1mygk")
+expand_mode = 1
+stretch_mode = 5

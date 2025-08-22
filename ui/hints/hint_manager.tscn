@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn13kcnys2yma"]
+
+[ext_resource type="Script" path="res://ui/hints/hint_manager.gd" id="1_l2wvo"]
+[ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="2_yniom"]
+[ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd_movement.tscn" id="3_nrtxf"]
+
+[sub_resource type="Resource" id="Resource_jq7hn"]
+script = ExtResource("2_yniom")
+id = &"wasd_movement"
+scene = ExtResource("3_nrtxf")
+
+[node name="HintManager" type="Node"]
+script = ExtResource("1_l2wvo")
+hints = Array[ExtResource("2_yniom")]([SubResource("Resource_jq7hn")])
