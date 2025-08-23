@@ -2,12 +2,18 @@ extends Node3D
 class_name Portal
 
 @export var url: String
+@export var hint_id: StringName
+@export var hint_events: HintEvents
+
 @onready var network_timeout: float = ProjectSettings.get("network/limits/tcp/connect_timeout_seconds")
 
 
 func _on_portal_entered(body: Node3D):
 	if not body is Player: return
 	play_enter_audio()
+	
+	if hint_id != &"":
+		hint_events.hide_hint_emit(hint_id)
 	
 	print("Portal_entered: " + url)
 	await get_tree().create_timer(0.3).timeout

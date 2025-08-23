@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8hgjo1tpct7f"]
+[gd_scene load_steps=13 format=3 uid="uid://b8hgjo1tpct7f"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="6_8o6qg"]
 [ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="7_ruyuq"]
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="8_xxk56"]
+[ext_resource type="Resource" uid="uid://ctx2y84xsulik" path="res://resources/hint_events.res" id="9_ola2q"]
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="9_owteq"]
 [ext_resource type="PackedScene" uid="uid://bk838kgidwy6r" path="res://addons/kenney_nature-kit/cliff_halfCorner_rock.glb" id="10_ly83i"]
 [ext_resource type="PackedScene" uid="uid://c4epmvxwfahq4" path="res://addons/kenney_nature-kit/cliff_half_rock.glb" id="12_uk1v0"]
@@ -95,6 +96,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 13)
 
 [node name="Portal" parent="." instance=ExtResource("8_xxk56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71032, 23)
+hint_id = &"portal"
+hint_events = ExtResource("9_ola2q")
 
 [node name="HintAreaWASD" parent="." instance=ExtResource("9_owteq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)

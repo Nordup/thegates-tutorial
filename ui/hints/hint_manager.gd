@@ -55,3 +55,7 @@ func _clear_current() -> void:
 		_current_instance.queue_free()
 	_current_instance = null
 	_current_id = &""
+
+
+func is_showing(hint_id: StringName) -> bool:
+	return _current_id == hint_id
