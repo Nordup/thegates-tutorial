@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://4bmt6lu3pjim"]
+
+[ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_xitxc"]
+[ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_6sjpq"]
+[ext_resource type="Script" path="res://main/spawn_points.gd" id="3_8s8cf"]
+[ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="4_tr0nf"]
+[ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="5_o1ir4"]
+[ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="10_gmscl"]
+
+[node name="TutorialSecond" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
+shadow_enabled = true
+shadow_opacity = 0.57
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_xitxc")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6sjpq")
+volume_db = -23.38
+autoplay = true
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
+script = ExtResource("3_8s8cf")
+
+[node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("4_tr0nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154951, 2.6999, 2.41061)
+
+[node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("5_o1ir4")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
+
+[node name="HintAreaBack" parent="." instance=ExtResource("10_gmscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
+hint_id = &"back"

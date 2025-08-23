@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_4i6s3")
-title = "Welcome"
-description = "Explore other worlds!"
+title = "Tutorial"
+description = "Learn user interface and how to use portals"
 image = "res://icon.png"
-export_folder = "/media/common/Projects/thegates-folder/ServerFiles/exports/welcome_page"
+export_folder = "/media/common/Projects/thegates-folder/ServerFiles/exports/tutorial"

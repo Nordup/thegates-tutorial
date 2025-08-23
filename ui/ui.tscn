@@ -1,15 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=15 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="5_7d7f7"]
 [ext_resource type="Resource" uid="uid://ctx2y84xsulik" path="res://resources/hint_events.res" id="5_dwyhe"]
-[ext_resource type="PackedScene" uid="uid://byfgsmntqeuj2" path="res://ui/gate_terminal/terminal_panel.tscn" id="5_ii114"]
 [ext_resource type="PackedScene" uid="uid://md4ik7uho32v" path="res://ui/interactable/interactable_panel.tscn" id="6_mid3e"]
 [ext_resource type="Script" path="res://ui/hints/hint_manager.gd" id="7_cx6s0"]
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="7_r8w35"]
 [ext_resource type="PackedScene" uid="uid://cu37qr3fl4hkn" path="res://ui/hints/jump.tscn" id="8_k6m4u"]
 [ext_resource type="PackedScene" uid="uid://bso1l3h4eqies" path="res://ui/hints/portal.tscn" id="9_w1gej"]
 [ext_resource type="Script" path="res://ui/hints/hint_input_watcher.gd" id="10_0h1nt"]
+[ext_resource type="PackedScene" uid="uid://c5ta5fqhyqc2l" path="res://ui/hints/back.tscn" id="10_gr4r2"]
 
 [sub_resource type="Resource" id="Resource_jq7hn"]
 script = ExtResource("5_7d7f7")
@@ -25,6 +25,11 @@ scene = ExtResource("8_k6m4u")
 script = ExtResource("5_7d7f7")
 id = &"portal"
 scene = ExtResource("9_w1gej")
+
+[sub_resource type="Resource" id="Resource_00ki0"]
+script = ExtResource("5_7d7f7")
+id = &"back"
+scene = ExtResource("10_gr4r2")
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -42,11 +47,6 @@ script = ExtResource("2_rhohj")
 [node name="Interactable" parent="." instance=ExtResource("6_mid3e")]
 layout_mode = 1
 
-[node name="TerminalPanel" parent="." node_paths=PackedStringArray("mouse_mode") instance=ExtResource("5_ii114")]
-visible = false
-layout_mode = 1
-mouse_mode = NodePath("../MouseMode")
-
 [node name="HintManager" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -57,7 +57,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_cx6s0")
 events = ExtResource("5_dwyhe")
-hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResource("Resource_ogutt"), SubResource("Resource_wywlu")])
+hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResource("Resource_ogutt"), SubResource("Resource_wywlu"), SubResource("Resource_00ki0")])
 
 [node name="HintInputWatcher" type="Node" parent="."]
 script = ExtResource("10_0h1nt")
