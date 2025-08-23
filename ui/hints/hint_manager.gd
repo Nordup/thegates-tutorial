@@ -19,7 +19,7 @@ func _ready() -> void:
 			continue
 		_id_to_scene[def.id] = def.scene
 	
-		events.show_hint.connect(show_hint)
+	events.show_hint.connect(show_hint)
 	events.hide_hint.connect(hide_hint)
 
 
