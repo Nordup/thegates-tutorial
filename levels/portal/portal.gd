@@ -11,8 +11,8 @@ class_name Portal
 func _on_portal_entered(body: Node3D):
 	if not body is Player: return
 	play_enter_audio()
-	
-	if hint_id != &"":
+
+	if hint_id != &"" and hint_events.is_showing(hint_id):
 		hint_events.hide_hint_emit(hint_id)
 	
 	print("Portal_entered: " + url)

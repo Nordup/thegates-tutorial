@@ -41,6 +41,7 @@ func show_hint(hint_id: StringName) -> void:
 	_current_instance = ui
 	add_child(ui)
 	ui.visible = true
+	events.current_hint_id = hint_id
 
 
 func hide_hint(hint_id: StringName) -> void:
@@ -48,6 +49,7 @@ func hide_hint(hint_id: StringName) -> void:
 	if _current_id == hint_id:
 		_clear_current()
 	_consumed_ids[hint_id] = true
+	events.current_hint_id = &""
 
 
 func _clear_current() -> void:
@@ -55,6 +57,7 @@ func _clear_current() -> void:
 		_current_instance.queue_free()
 	_current_instance = null
 	_current_id = &""
+	events.current_hint_id = &""
 
 
 func is_showing(hint_id: StringName) -> bool:
