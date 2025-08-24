@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8hgjo1tpct7f"]
+[gd_scene load_steps=14 format=3 uid="uid://b8hgjo1tpct7f"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
@@ -9,10 +9,11 @@
 [ext_resource type="Resource" uid="uid://ctx2y84xsulik" path="res://resources/hint_events.res" id="9_ola2q"]
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="9_owteq"]
 [ext_resource type="PackedScene" uid="uid://bk838kgidwy6r" path="res://addons/kenney_nature-kit/cliff_halfCorner_rock.glb" id="10_ly83i"]
+[ext_resource type="PackedScene" uid="uid://dk0plg6shcb2m" path="res://levels/hints/hint_marker.tscn" id="11_pa5fh"]
 [ext_resource type="PackedScene" uid="uid://c4epmvxwfahq4" path="res://addons/kenney_nature-kit/cliff_half_rock.glb" id="12_uk1v0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gh5es"]
-size = Vector3(8.0509, 1, 2.95557)
+size = Vector3(12.8366, 1, 8.31177)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7h7q4"]
 size = Vector3(6.4673, 1.55975, 6.8584)
@@ -37,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
 script = ExtResource("5_7i5ax")
 
 [node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154951, 2.6999, 2.41061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3891, 2.6999, 5.88465)
 
 [node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("7_ruyuq")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
@@ -106,7 +107,7 @@ texture = null
 texture = null
 
 [node name="HintAreaWASD" parent="." instance=ExtResource("9_owteq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3935, 0, 6.88637)
 hint_id = &"wasd"
 
 [node name="HintAreaJump" parent="." instance=ExtResource("9_owteq")]
@@ -114,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113341, 0, 13.2145)
 hint_id = &"jump"
 
 [node name="CollisionShape3D" parent="HintAreaJump" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0941772, 0.5, -0.0852051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48701, 0.5, 2.59289)
 shape = SubResource("BoxShape3D_gh5es")
 
 [node name="HintAreaPortal" parent="." instance=ExtResource("9_owteq")]
@@ -124,6 +125,11 @@ hint_id = &"portal"
 [node name="CollisionShape3D" parent="HintAreaPortal" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115334, 0.779877, 0.525635)
 shape = SubResource("BoxShape3D_7h7q4")
+
+[node name="HintMarker" parent="." instance=ExtResource("11_pa5fh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117114, 1.8, 19.0208)
+hint_show_id = &"wasd"
+hint_hide_id = &"portal"
 
 [editable path="Portal"]
 [editable path="HintAreaJump"]
