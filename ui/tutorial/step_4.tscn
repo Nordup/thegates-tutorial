@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://baxa2se14u88a"]
+
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="1_utyoc"]
+
+[node name="Step1" instance=ExtResource("1_utyoc")]
+
+[node name="Label" parent="Control" index="1"]
+text = "Step 4: Join Your First Multiplayer Hub"
+
+[node name="RichTextLabel" parent="Control" index="2"]
+text = "That’s it — you’ve got the basics down!
+
+Now it’s time to meet others, make friends, and explore more worlds together in your first multiplayer hub."

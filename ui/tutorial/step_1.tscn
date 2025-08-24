@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvgx53b4okdun"]
+
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_5as52"]
+[ext_resource type="Script" path="res://ui/tutorial/step_ui.gd" id="1_r6p81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h87v5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eik15"]
+font = ExtResource("1_5as52")
+font_size = 30
+
+[node name="Step1" type="Control" node_paths=PackedStringArray("close")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6p81")
+close = NodePath("Control/Button")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -185.5
+offset_right = 328.0
+offset_bottom = 185.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h87v5")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 48.0
+offset_right = 165.0
+offset_bottom = 85.0
+grow_horizontal = 2
+text = "Step 1: Discover Portals"
+label_settings = SubResource("LabelSettings_eik15")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -257.0
+offset_top = 141.0
+offset_right = 262.0
+offset_bottom = 359.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_5as52")
+theme_override_font_sizes/normal_font_size = 20
+text = "Portals are links between worlds. They’re how you explore the new internet. Each world can connect to many others.
+
+Let’s step through your very first portal."
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = -69.5
+offset_right = -39.0
+offset_bottom = -28.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_5as52")
+text = "Continue"

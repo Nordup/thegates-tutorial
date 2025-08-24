@@ -17,6 +17,16 @@ lightmap_size_hint = Vector2i(7, 7)
 material = SubResource("StandardMaterial3D_x5w3d")
 size = Vector2(2, 2)
 
+[sub_resource type="Animation" id="Animation_5rouy"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 2, 0)
+
 [sub_resource type="Animation" id="Animation_3kr7c"]
 resource_name = "loop"
 length = 2.0
@@ -28,16 +38,6 @@ tracks/0/path = NodePath("MeshInstance3D")
 tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 3.5, 0, 1, 1, 0, 2.5, 0, 2, 1, 0, 3.5, 0)
-
-[sub_resource type="Animation" id="Animation_5rouy"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 2, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ffsuj"]
 _data = {

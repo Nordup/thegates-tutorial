@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=20 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="5_7d7f7"]
@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bso1l3h4eqies" path="res://ui/hints/portal.tscn" id="9_w1gej"]
 [ext_resource type="Script" path="res://ui/hints/hint_input_watcher.gd" id="10_0h1nt"]
 [ext_resource type="PackedScene" uid="uid://c5ta5fqhyqc2l" path="res://ui/hints/back.tscn" id="10_gr4r2"]
+[ext_resource type="Script" path="res://ui/tutorial/tutorial_ui_manager.gd" id="11_yccff"]
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="12_jjfy4"]
+[ext_resource type="PackedScene" uid="uid://28ru5uxr1llr" path="res://ui/tutorial/step_2.tscn" id="13_yrwlm"]
+[ext_resource type="PackedScene" uid="uid://624s536j5vj6" path="res://ui/tutorial/step_3.tscn" id="14_luj3g"]
+[ext_resource type="PackedScene" uid="uid://baxa2se14u88a" path="res://ui/tutorial/step_4.tscn" id="15_vpfe8"]
 
 [sub_resource type="Resource" id="Resource_jq7hn"]
 script = ExtResource("5_7d7f7")
@@ -62,3 +67,15 @@ hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResourc
 [node name="HintInputWatcher" type="Node" parent="."]
 script = ExtResource("10_0h1nt")
 events = ExtResource("5_dwyhe")
+
+[node name="TutorialUI" type="Control" parent="." node_paths=PackedStringArray("mouse_mode")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("11_yccff")
+mouse_mode = NodePath("../MouseMode")
+tutorial_scenes = Array[PackedScene]([ExtResource("12_jjfy4"), ExtResource("13_yrwlm"), ExtResource("14_luj3g"), ExtResource("15_vpfe8")])

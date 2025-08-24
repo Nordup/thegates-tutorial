@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://624s536j5vj6"]
+
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="1_t7bc3"]
+
+[node name="Step1" instance=ExtResource("1_t7bc3")]
+
+[node name="Control" parent="." index="0"]
+offset_top = -256.0
+offset_bottom = 256.0
+
+[node name="Label" parent="Control" index="1"]
+text = "Step 3: Move Back and Forth"
+
+[node name="RichTextLabel" parent="Control" index="2"]
+offset_bottom = 410.0
+text = "Nice work — your progress has been saved, so let’s keep going.
+
+To return to where you came from, press the Back button. You can also move forward again afterward.
+
+There are more buttons to explore, like Home, Bookmark, and Help.
+For now, use Back to return to the previous world and complete the tutorial."
