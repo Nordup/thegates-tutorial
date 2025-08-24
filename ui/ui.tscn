@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=22 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="5_7d7f7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bso1l3h4eqies" path="res://ui/hints/portal.tscn" id="9_w1gej"]
 [ext_resource type="Script" path="res://ui/hints/hint_input_watcher.gd" id="10_0h1nt"]
 [ext_resource type="PackedScene" uid="uid://c5ta5fqhyqc2l" path="res://ui/hints/back.tscn" id="10_gr4r2"]
+[ext_resource type="PackedScene" uid="uid://cjomdnu8djfp1" path="res://ui/hints/reload.tscn" id="10_w2mwe"]
 [ext_resource type="Script" path="res://ui/tutorial/tutorial_ui_manager.gd" id="11_yccff"]
 [ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="12_jjfy4"]
 [ext_resource type="PackedScene" uid="uid://28ru5uxr1llr" path="res://ui/tutorial/step_2.tscn" id="13_yrwlm"]
@@ -35,6 +36,11 @@ scene = ExtResource("9_w1gej")
 script = ExtResource("5_7d7f7")
 id = &"back"
 scene = ExtResource("10_gr4r2")
+
+[sub_resource type="Resource" id="Resource_365p0"]
+script = ExtResource("5_7d7f7")
+id = &"reload"
+scene = ExtResource("10_w2mwe")
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -62,7 +68,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_cx6s0")
 events = ExtResource("5_dwyhe")
-hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResource("Resource_ogutt"), SubResource("Resource_wywlu"), SubResource("Resource_00ki0")])
+hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResource("Resource_ogutt"), SubResource("Resource_wywlu"), SubResource("Resource_00ki0"), SubResource("Resource_365p0")])
 
 [node name="HintInputWatcher" type="Node" parent="."]
 script = ExtResource("10_0h1nt")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl2wfxkk7idbc"]
+
+[ext_resource type="PackedScene" uid="uid://4bmt6lu3pjim" path="res://levels/tutorial_steps/world_2_step_2.tscn" id="1_sf72b"]
+
+[node name="TutorialSecond" instance=ExtResource("1_sf72b")]
+
+[node name="HintAreaBack" parent="." index="5"]
+hint_id = &"back"

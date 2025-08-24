@@ -131,6 +131,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117114, 1.8, 19.0208)
 hint_show_id = &"wasd"
 hint_hide_id = &"portal"
 
+[node name="Portal2" parent="." instance=ExtResource("8_xxk56")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.7354, -0.0520199, 0.078539)
+url = "world.gate"
+hint_events = ExtResource("9_ola2q")
+
+[node name="Portal" parent="Portal2" index="0"]
+visible = false
+monitoring = false
+
+[node name="Sprite3D" parent="Portal2" index="2"]
+texture = null
+
+[node name="Sprite3D2" parent="Portal2" index="3"]
+texture = null
+
 [editable path="Portal"]
 [editable path="HintAreaJump"]
 [editable path="HintAreaPortal"]
+[editable path="Portal2"]

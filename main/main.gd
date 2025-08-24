@@ -2,8 +2,12 @@ extends Node
 
 @export var player_spawner: PlayerSpawner
 @export var level_root: Node3D
-@export var default_scene: PackedScene
-@export var second_scene: PackedScene
+@export var tutorial_ui_manager: TutorialUIManager
+
+@export var world_1_step_1: PackedScene
+@export var world_1_step_4: PackedScene
+@export var world_2_step_2: PackedScene
+@export var world_2_step_3: PackedScene
 
 
 func _ready() -> void:
@@ -17,6 +21,7 @@ func _ready() -> void:
 			break
 	
 	var scene := _get_scene_for_url(url)
+	print("scene: ", scene.get_path())
 
 	var level = scene.instantiate()
 	level_root.add_child(level)
@@ -26,7 +31,7 @@ func _ready() -> void:
 
 func _get_scene_for_url(url: String) -> PackedScene:
 	print("get scene for url: ", url)
-	var scene: PackedScene = default_scene
+	var scene: PackedScene = get_world_1()
 	if url == "":
 		return scene
 	
@@ -56,6 +61,24 @@ func _get_scene_for_url(url: String) -> PackedScene:
 	print("params: ", params)
 
 	if params.has("world") and str(params["world"]) == "2":
-		scene = second_scene
+		scene = get_world_2()
 
 	return scene
+
+
+func get_world_1() -> PackedScene:
+	if ProgressSaver.is_step_completed(3):
+		tutorial_ui_manager.show_step_scene(4)
+		return world_1_step_4
+	
+	tutorial_ui_manager.show_step_scene(1)
+	return world_1_step_1
+
+
+func get_world_2() -> PackedScene:
+	if ProgressSaver.is_step_completed(2):
+		tutorial_ui_manager.show_step_scene(3)
+		return world_2_step_3
+	
+	tutorial_ui_manager.show_step_scene(2)
+	return world_2_step_2

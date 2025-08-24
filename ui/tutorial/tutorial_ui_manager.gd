@@ -4,16 +4,21 @@ class_name TutorialUIManager
 
 @export var mouse_mode: MouseMode
 @export var tutorial_scenes: Array[PackedScene] = []
-@export_range(1, 4) var tutorial_step: int = 1
 
 var _current_instance: Node = null
+var _current_step: int = 1
 
 
-func _ready() -> void:
-	_show_step_scene()
+func show_step_scene(tutorial_step: int) -> void:
+	if ProgressSaver.is_step_completed(tutorial_step):
+		print("step %d is already completed" % tutorial_step)
+		mouse_mode.set_captured(true)
+		EditMode.is_enabled = false
+		return
 
+	print("tutorial_step: ", tutorial_step)
+	_current_step = tutorial_step
 
-func _show_step_scene() -> void:
 	if _current_instance and is_instance_valid(_current_instance):
 		_current_instance.queue_free()
 
@@ -47,3 +52,5 @@ func on_closed() -> void:
 
 	mouse_mode.set_captured(true)
 	EditMode.is_enabled = false
+
+	ProgressSaver.mark_step_completed(_current_step)

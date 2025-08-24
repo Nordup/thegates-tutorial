@@ -34,4 +34,4 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
 
 [node name="HintAreaBack" parent="." instance=ExtResource("10_gmscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
-hint_id = &"back"
+hint_id = &"reload"
