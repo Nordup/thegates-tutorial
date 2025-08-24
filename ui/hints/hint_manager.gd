@@ -1,5 +1,5 @@
 extends Control
-# class_name HintManager
+class_name HintManager
 
 @export var events: HintEvents
 @export var hints: Array[HintDefinition] = []
@@ -8,6 +8,9 @@ var _id_to_scene: Dictionary = {}
 var _consumed_ids: Dictionary = {}
 var _current_id: StringName = &""
 var _current_instance: Control = null
+
+var _is_paused_by_tutorial: bool = false
+var _last_requested_hint_id: StringName = &""
 
 
 func _ready() -> void:
@@ -25,6 +28,9 @@ func _ready() -> void:
 
 func show_hint(hint_id: StringName) -> void:
 	print("try show hint: ", hint_id)
+	_last_requested_hint_id = hint_id
+	if _is_paused_by_tutorial:
+		return
 	if _consumed_ids.get(hint_id, false):
 		return
 	if _current_id == hint_id:
@@ -58,6 +64,19 @@ func _clear_current() -> void:
 	_current_instance = null
 	_current_id = &""
 	events.current_hint_id = &""
+
+
+func pause_by_tutorial() -> void:
+	_is_paused_by_tutorial = true
+	print("hint manager paused by tutorial")
+
+
+func resume_after_tutorial_closed() -> void:
+	_is_paused_by_tutorial = false
+	if _last_requested_hint_id != &"":
+		# Attempt to show the last requested hint now that tutorial is closed
+		show_hint(_last_requested_hint_id)
+	print("hint manager resumed after tutorial closed")
 
 
 func is_showing(hint_id: StringName) -> bool:

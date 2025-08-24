@@ -4,6 +4,7 @@ class_name TutorialUIManager
 
 @export var mouse_mode: MouseMode
 @export var tutorial_scenes: Array[PackedScene] = []
+@export var hint_manager: HintManager
 
 var _current_instance: Node = null
 var _current_step: int = 1
@@ -39,6 +40,7 @@ func show_step_scene(tutorial_step: int) -> void:
 	_current_instance = scene.instantiate()
 	add_child(_current_instance)
 
+	hint_manager.pause_by_tutorial()
 	mouse_mode.set_captured(false)
 	EditMode.is_enabled = true
 
@@ -50,7 +52,13 @@ func on_closed() -> void:
 		_current_instance.queue_free()
 	_current_instance = null
 
+	hint_manager.resume_after_tutorial_closed()
 	mouse_mode.set_captured(true)
-	EditMode.is_enabled = false
 
 	ProgressSaver.mark_step_completed(_current_step)
+	
+	# Player camera thinks mouse moved when setting mouse mode to captured
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	EditMode.is_enabled = false
