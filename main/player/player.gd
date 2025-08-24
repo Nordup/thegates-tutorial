@@ -29,10 +29,25 @@ class_name Player
 @onready var _gravity: float = -30.0
 @onready var _ground_height: float = 0.0
 
+var _pending_spawn_facing_direction: Vector3 = Vector3.ZERO
+
 
 func _ready() -> void:
 	_camera_controller.setup(self)
-	call_deferred("_align_orientation_to_camera")
+	if _pending_spawn_facing_direction != Vector3.ZERO:
+		var direction := _pending_spawn_facing_direction
+		direction.y = 0.0
+		if direction.length() < 0.001:
+			direction = Vector3.FORWARD
+		_last_strong_direction = direction.normalized()
+		_orient_character_to_direction(_last_strong_direction, 0.0, true)
+		_camera_controller.set_yaw_from_forward(_last_strong_direction)
+	else:
+		call_deferred("_align_orientation_to_camera")
+
+
+func set_pending_spawn_facing_direction(direction: Vector3) -> void:
+	_pending_spawn_facing_direction = direction
 
 
 func _physics_process(delta: float) -> void:
@@ -129,10 +144,18 @@ func _orient_character_to_direction(direction: Vector3, delta: float, force = fa
 	if force: _rotation_root.transform.basis = Basis(rotation_basis).scaled(model_scale)
 
 
-func respawn(spawn_position: Vector3) -> void:
+func respawn(spawn_position: Vector3, facing_direction: Vector3 = Vector3.ZERO) -> void:
 	global_position = spawn_position
 	velocity = Vector3.ZERO
-	call_deferred("_align_orientation_to_camera")
+	if facing_direction != Vector3.ZERO:
+		facing_direction.y = 0.0
+		if facing_direction.length() < 0.001:
+			facing_direction = Vector3.FORWARD
+		_last_strong_direction = facing_direction.normalized()
+		_orient_character_to_direction(_last_strong_direction, 0.0, true)
+		_camera_controller.set_yaw_from_forward(_last_strong_direction)
+	else:
+		call_deferred("_align_orientation_to_camera")
 
 
 func _align_orientation_to_camera() -> void:

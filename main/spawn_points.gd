@@ -4,7 +4,7 @@ class_name SpawnPoints
 var used_ids: Array[int]
 
 
-func get_spawn_position() -> Vector3:
+func get_spawn_transform() -> Transform3D:
 	var spawn_points = get_children() as Array[Node]
 	var size = spawn_points.size()
 	
@@ -17,4 +17,4 @@ func get_spawn_position() -> Vector3:
 		elif used_ids.size() == size:
 			used_ids.pop_front()
 	
-	return spawn_points[id].global_position
+	return (spawn_points[id] as Node3D).global_transform

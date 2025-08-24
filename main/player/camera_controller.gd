@@ -63,3 +63,13 @@ func setup(anchor: CharacterBody3D) -> void:
 	_offset = global_transform.origin - anchor.global_transform.origin
 	camera.global_transform = camera.global_transform.interpolate_with(_pivot.global_transform, 0.1)
 	_camera_spring_arm.add_excluded_object(_anchor.get_rid())
+
+
+func set_yaw_from_forward(forward: Vector3) -> void:
+	var dir := forward
+	dir.y = 0.0
+	if dir.length() < 0.001:
+		return
+	dir = dir.normalized()
+	_euler_rotation.y = atan2(dir.x, dir.z)
+	transform.basis = Basis.from_euler(_euler_rotation)
