@@ -2,7 +2,7 @@ extends Control
 
 signal closed
 
-@export var close: Button
+@export var close: TextureButton
 
 
 func _ready() -> void:

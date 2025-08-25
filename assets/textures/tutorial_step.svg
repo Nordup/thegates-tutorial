@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="76.172806mm"
+   height="72.2248mm"
+   viewBox="0 0 76.172806 72.2248"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter19178"
+       x="-0.031578644"
+       y="-0.2997808"
+       width="1.0631574"
+       height="1.5995616">
+      <feGaussianBlur
+         stdDeviation="0.76599992"
+         id="feGaussianBlur19178" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter19179"
+       x="-0.049587288"
+       y="-0.057949644"
+       width="1.0991746"
+       height="1.1158991">
+      <feGaussianBlur
+         stdDeviation="1.2859999"
+         id="feGaussianBlur19179" />
+    </filter>
+  </defs>
+  <g
+     id="g19179"
+     transform="translate(3.086399,1.8383996)">
+    <g
+       id="g19176">
+      <path
+         style="fill:#0d062b;fill-opacity:0.68143;stroke:#ffffff;stroke-width:0.699999;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         d="M 0.35,7.6500157 V 61.521535 l 7.2221642,5.428468 H 69.650003 V 7.652767 Z"
+         id="path19176" />
+      <path
+         style="fill:#886bff;fill-opacity:1;stroke:#ffffff;stroke-width:0.7;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         d="M 0.34999999,0.34999999 H 67.880717 l 1.769275,1.62289771 -2.95e-4,5.6673858 c -23.099994,-0.010553 -46.199714,0.026409 -69.29969701,0 z"
+         id="path19175" />
+    </g>
+    <g
+       id="g19178">
+      <path
+         style="opacity:1;fill:none;fill-opacity:0.68143;stroke:#ffffff;stroke-width:0.699999;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;filter:url(#filter19179)"
+         d="M 0.35,7.6500157 V 61.521535 l 7.2221642,5.428468 H 69.650003 V 7.652767 Z"
+         id="path19177" />
+      <path
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.7;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;filter:url(#filter19178)"
+         d="M 0.34999999,0.34999999 H 67.880717 l 1.769275,1.62289771 -2.95e-4,5.6673858 c -23.099994,-0.010553 -46.199714,0.026409 -69.29969701,0 z"
+         id="path19178" />
+    </g>
+  </g>
+</svg>

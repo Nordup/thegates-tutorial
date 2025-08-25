@@ -4,15 +4,10 @@
 
 [node name="Step1" instance=ExtResource("1_t7bc3")]
 
-[node name="Control" parent="." index="0"]
-offset_top = -256.0
-offset_bottom = 256.0
-
-[node name="Label" parent="Control" index="1"]
+[node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Step 3: Move Back and Forth"
 
-[node name="RichTextLabel" parent="Control" index="2"]
-offset_bottom = 422.0
+[node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
 text = "Nice work — your progress has been saved, so let’s keep going.
 
 To return to where you came from, press the Back button. You can also move forward again afterward.
@@ -20,3 +15,7 @@ To return to where you came from, press the Back button. You can also move forwa
 There are more buttons to explore, like Home, Bookmark, and Help.
 
 For now, use Back to return to the previous world and complete the tutorial."
+
+[node name="Control" parent="." index="2"]
+offset_top = -256.0
+offset_bottom = 256.0

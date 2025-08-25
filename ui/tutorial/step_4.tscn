@@ -4,10 +4,10 @@
 
 [node name="Step1" instance=ExtResource("1_utyoc")]
 
-[node name="Label" parent="Control" index="1"]
-text = "Step 4: Join Your First Multiplayer Hub"
+[node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
+text = "Finish: Your First Multiplayer Hub"
 
-[node name="RichTextLabel" parent="Control" index="2"]
+[node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
 text = "That’s it — you’ve got the basics down!
 
 Now it’s time to meet others, make friends, and explore more worlds together in your first multiplayer hub."
