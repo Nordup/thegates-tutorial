@@ -1,13 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://28ru5uxr1llr"]
 
-[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="1_ecjim"]
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_ecjim"]
 
-[node name="Step1" instance=ExtResource("1_ecjim")]
+[node name="Step" instance=ExtResource("1_ecjim")]
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Step 2: Master Navigation"
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
+theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 text = "Welcome to Tutorial World 2!
 
 Here, you’ll learn how to move around using the UI buttons.
@@ -15,7 +16,3 @@ Here, you’ll learn how to move around using the UI buttons.
 Start with the Reload button. Use it if you want to restart the game or refresh the world.
 
 Go ahead and give it a try."
-
-[node name="Control" parent="." index="2"]
-offset_top = -221.0
-offset_bottom = 221.0

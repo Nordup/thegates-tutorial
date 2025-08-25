@@ -1,13 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://624s536j5vj6"]
 
-[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="1_t7bc3"]
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_t7bc3"]
 
-[node name="Step1" instance=ExtResource("1_t7bc3")]
+[node name="Step" instance=ExtResource("1_t7bc3")]
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Step 3: Move Back and Forth"
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
+theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 text = "Nice work — your progress has been saved, so let’s keep going.
 
 To return to where you came from, press the Back button. You can also move forward again afterward.
@@ -15,7 +16,3 @@ To return to where you came from, press the Back button. You can also move forwa
 There are more buttons to explore, like Home, Bookmark, and Help.
 
 For now, use Back to return to the previous world and complete the tutorial."
-
-[node name="Control" parent="." index="2"]
-offset_top = -256.0
-offset_bottom = 256.0

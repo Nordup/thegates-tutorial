@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ta5fqhyqc2l" path="res://ui/hints/back.tscn" id="10_gr4r2"]
 [ext_resource type="PackedScene" uid="uid://cjomdnu8djfp1" path="res://ui/hints/reload.tscn" id="10_w2mwe"]
 [ext_resource type="Script" path="res://ui/tutorial/tutorial_ui_manager.gd" id="11_yccff"]
-[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="12_jjfy4"]
+[ext_resource type="PackedScene" uid="uid://bopm80mgimtea" path="res://ui/tutorial/step_1.tscn" id="12_jjfy4"]
 [ext_resource type="PackedScene" uid="uid://28ru5uxr1llr" path="res://ui/tutorial/step_2.tscn" id="13_yrwlm"]
 [ext_resource type="PackedScene" uid="uid://624s536j5vj6" path="res://ui/tutorial/step_3.tscn" id="14_luj3g"]
 [ext_resource type="PackedScene" uid="uid://baxa2se14u88a" path="res://ui/tutorial/step_4.tscn" id="15_vpfe8"]

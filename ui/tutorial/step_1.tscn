@@ -1,20 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvgx53b4okdun"]
+[gd_scene load_steps=9 format=3 uid="uid://bopm80mgimtea"]
 
-[ext_resource type="Script" path="res://ui/tutorial/step_ui.gd" id="1_r6p81"]
-[ext_resource type="Shader" path="res://ui/tutorial/background.gdshader" id="2_resbv"]
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_pfkwq"]
 [ext_resource type="Texture2D" uid="uid://g68mu6ynwrw" path="res://assets/textures/tutorial_step.png" id="3_0cov1"]
 [ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="4_ur2f6"]
 [ext_resource type="FontFile" uid="uid://bek4nfqxc8143" path="res://fonts/Inter-Italic.otf" id="5_thcf1"]
 [ext_resource type="Texture2D" uid="uid://d2nd4itkta7mx" path="res://assets/textures/button.png" id="5_wkkop"]
 [ext_resource type="Texture2D" uid="uid://biagx3jeotdfy" path="res://assets/textures/button_hover.png" id="6_wibsn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2auee"]
-shader = ExtResource("2_resbv")
-shader_parameter/radius = 3.3
-shader_parameter/amount = 1.0
-shader_parameter/tint_color = Color(0.45, 0.45, 0.45, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp7hc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eik15"]
 font = ExtResource("4_ur2f6")
@@ -26,44 +17,24 @@ font = ExtResource("5_thcf1")
 font_size = 22
 font_color = Color(0.945098, 0.921569, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h87v5"]
+[node name="Step" instance=ExtResource("1_pfkwq")]
 
-[node name="Step1" type="Control" node_paths=PackedStringArray("close")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_r6p81")
-close = NodePath("TextureRect/MarginContainer/VBoxContainer/Control/Button")
-
-[node name="Panel" type="Panel" parent="."]
-material = SubResource("ShaderMaterial_2auee")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wp7hc")
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Welcome" type="TextureRect" parent="." index="1"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.5
-offset_top = -318.0
-offset_right = 330.5
-offset_bottom = 318.0
+offset_left = -344.0
+offset_top = -331.5
+offset_right = 344.0
+offset_bottom = 331.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_0cov1")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Welcome" index="0"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,40 +46,42 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Welcome/MarginContainer" index="0"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Welcome/MarginContainer/VBoxContainer" index="0"]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
-text = "Step 1: Discover Portals"
+text = "Quick tutorial"
 label_settings = SubResource("LabelSettings_eik15")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Welcome/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 70
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Welcome/MarginContainer/VBoxContainer/MarginContainer" index="0"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 theme_override_fonts/normal_font = ExtResource("5_thcf1")
 theme_override_font_sizes/normal_font_size = 22
-text = "Portals are links between worlds. They’re how you explore the new internet. Each world can connect to many others.
+text = "Goals: Learn the UI.
+Unlock the power of portals.
 
-Let’s step through your very first portal."
+Estimated duration: 2 minutes.
+Steps: 0/3"
 
-[node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="Welcome/MarginContainer/VBoxContainer" index="2"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Button" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/Control"]
+[node name="Button" type="TextureButton" parent="Welcome/MarginContainer/VBoxContainer/Control" index="0"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,7 +99,7 @@ texture_normal = ExtResource("5_wkkop")
 texture_pressed = ExtResource("5_wkkop")
 texture_hover = ExtResource("6_wibsn")
 
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/Control/Button"]
+[node name="Label" type="Label" parent="Welcome/MarginContainer/VBoxContainer/Control/Button" index="0"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,31 +117,20 @@ label_settings = SubResource("LabelSettings_i86qq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ReferenceRect" type="ReferenceRect" parent="TextureRect/MarginContainer"]
+[node name="ReferenceRect" type="ReferenceRect" parent="Welcome/MarginContainer" index="1"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -328.0
-offset_top = -185.5
-offset_right = 328.0
-offset_bottom = 185.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Control"]
+[node name="TextureRect" parent="." index="2"]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h87v5")
+
+[node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
+text = "[b]Portals[/b] are links between worlds.
+
+They’re how you explore the new internet. Each world can connect to many others.
+
+Let’s step through your very first portal."
+
+[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="TextureRect" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="Welcome" method="set_visible" binds= [false]]

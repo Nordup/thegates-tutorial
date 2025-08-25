@@ -1,13 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://baxa2se14u88a"]
 
-[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_1.tscn" id="1_utyoc"]
+[ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_utyoc"]
 
-[node name="Step1" instance=ExtResource("1_utyoc")]
+[node name="Step" instance=ExtResource("1_utyoc")]
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Finish: Your First Multiplayer Hub"
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
+theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 text = "That’s it — you’ve got the basics down!
 
 Now it’s time to meet others, make friends, and explore more worlds together in your first multiplayer hub."

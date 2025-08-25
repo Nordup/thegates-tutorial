@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://dvgx53b4okdun"]
+
+[ext_resource type="Script" path="res://ui/tutorial/step_ui.gd" id="1_gvp75"]
+[ext_resource type="Shader" path="res://ui/tutorial/background.gdshader" id="2_yhn4n"]
+[ext_resource type="Texture2D" uid="uid://g68mu6ynwrw" path="res://assets/textures/tutorial_step.png" id="3_0u84d"]
+[ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="4_l71wm"]
+[ext_resource type="FontFile" uid="uid://bek4nfqxc8143" path="res://fonts/Inter-Italic.otf" id="5_qxve5"]
+[ext_resource type="Texture2D" uid="uid://d2nd4itkta7mx" path="res://assets/textures/button.png" id="6_b4a7l"]
+[ext_resource type="FontFile" uid="uid://c5hxhq1fmfxoy" path="res://fonts/Inter-BoldItalic.otf" id="6_cq46w"]
+[ext_resource type="FontFile" uid="uid://hxouqh67i60x" path="res://fonts/Monospace.ttf" id="6_cxwy4"]
+[ext_resource type="Texture2D" uid="uid://biagx3jeotdfy" path="res://assets/textures/button_hover.png" id="7_qt5lp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2auee"]
+shader = ExtResource("2_yhn4n")
+shader_parameter/radius = 3.3
+shader_parameter/amount = 1.0
+shader_parameter/tint_color = Color(0.45, 0.45, 0.45, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp7hc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eik15"]
+font = ExtResource("4_l71wm")
+font_size = 20
+font_color = Color(0.88, 0.82, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i86qq"]
+font = ExtResource("5_qxve5")
+font_size = 22
+font_color = Color(0.945098, 0.921569, 1, 1)
+
+[node name="Step" type="Control" node_paths=PackedStringArray("close")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gvp75")
+close = NodePath("TextureRect/MarginContainer/VBoxContainer/Control/Button")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_2auee")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wp7hc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.5
+offset_top = -318.0
+offset_right = 330.5
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0u84d")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 53)
+layout_mode = 2
+text = "Step 1: Discover Portals"
+label_settings = SubResource("LabelSettings_eik15")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 70
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
+theme_override_fonts/normal_font = ExtResource("5_qxve5")
+theme_override_fonts/mono_font = ExtResource("6_cxwy4")
+theme_override_fonts/bold_font = ExtResource("6_cq46w")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+bbcode_enabled = true
+text = "Portals are links between worlds. They’re how you explore the new internet. Each world can connect to many others.
+
+Let’s step through your very first portal."
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -204.55
+offset_top = -22.5
+offset_right = -34.55
+offset_bottom = 22.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_b4a7l")
+texture_pressed = ExtResource("6_b4a7l")
+texture_hover = ExtResource("7_qt5lp")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/Control/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.095
+offset_top = -16.5
+offset_right = 52.905
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+label_settings = SubResource("LabelSettings_i86qq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TextureRect/MarginContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
