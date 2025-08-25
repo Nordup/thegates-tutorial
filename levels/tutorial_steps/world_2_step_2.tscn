@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4bmt6lu3pjim"]
+[gd_scene load_steps=8 format=3 uid="uid://4bmt6lu3pjim"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_xitxc"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_6sjpq"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="3_8s8cf"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="4_tr0nf"]
 [ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="5_o1ir4"]
+[ext_resource type="PackedScene" uid="uid://c0mo8tek77du4" path="res://main/player/model/character_skin.tscn" id="7_jfn86"]
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="10_gmscl"]
 
 [node name="TutorialSecond" type="Node3D"]
@@ -35,3 +36,6 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
 [node name="HintAreaBack" parent="." instance=ExtResource("10_gmscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
 hint_id = &"reload"
+
+[node name="CharacterSkin" parent="." instance=ExtResource("7_jfn86")]
+transform = Transform3D(-1.27839, 0, 0.784685, 0, 1.5, 0, -0.784685, 0, -1.27839, -6.81428, -1.43051e-06, 11.2574)

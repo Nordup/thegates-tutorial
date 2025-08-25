@@ -8,7 +8,7 @@ var spawn_points: SpawnPoints
 var player: Player
 
 
-func create_local_player(tutorial_scene_root: Node) -> void:
+func create_local_player(tutorial_scene_root: Node, hide_player: bool = false) -> void:
 	spawn_points = tutorial_scene_root.get_node_or_null("SpawnPoints")
 	if not spawn_points: print("No spawn points found, skipping player spawn"); return
 
@@ -20,6 +20,9 @@ func create_local_player(tutorial_scene_root: Node) -> void:
 	player.name = "LocalPlayer"
 	player.set_pending_spawn_facing_direction(spawn_forward)
 	player.call_deferred("set_position", spawn_position)
+
+	if hide_player:
+		player.visible = false
 	
 	get_node(spawn_path).add_child(player)
 

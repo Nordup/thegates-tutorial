@@ -26,7 +26,8 @@ func _ready() -> void:
 	var level = scene.instantiate()
 	level_root.add_child(level)
 
-	player_spawner.create_local_player(level)
+	var hide_player := scene == world_2_step_2 or scene == world_2_step_3
+	player_spawner.create_local_player(level, hide_player)
 
 
 func _get_scene_for_url(url: String) -> PackedScene:
