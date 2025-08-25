@@ -9,7 +9,8 @@ var player: Player
 
 
 func create_local_player(tutorial_scene_root: Node) -> void:
-	spawn_points = tutorial_scene_root.get_node("SpawnPoints")
+	spawn_points = tutorial_scene_root.get_node_or_null("SpawnPoints")
+	if not spawn_points: print("No spawn points found, skipping player spawn"); return
 
 	var spawn_transform: Transform3D = spawn_points.get_spawn_transform()
 	var spawn_position: Vector3 = spawn_transform.origin
@@ -24,6 +25,8 @@ func create_local_player(tutorial_scene_root: Node) -> void:
 
 
 func respawn_local_player() -> void:
+	if not spawn_points: print("No spawn points found, skipping player respawn"); return
+
 	var spawn_transform: Transform3D = spawn_points.get_spawn_transform()
 	var spawn_position: Vector3 = spawn_transform.origin
 	var spawn_forward: Vector3 = spawn_transform.basis.z

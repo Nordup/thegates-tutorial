@@ -4,20 +4,20 @@ class_name TutorialUIManager
 @export var hint_events: HintEvents
 @export var mouse_mode: MouseMode
 @export var tutorial_scenes: Array[PackedScene] = []
+@export var dont_hide_mouse_steps: Array[int] = []
 
 var _current_instance: Node = null
 var _current_step: int = 1
 
 
 func show_step_scene(tutorial_step: int) -> void:
-	if ProgressSaver.is_step_completed(tutorial_step):
-		print("step %d is already completed" % tutorial_step)
-		mouse_mode.set_captured(true)
-		EditMode.is_enabled = false
-		return
-
 	print("tutorial_step: ", tutorial_step)
 	_current_step = tutorial_step
+
+	if ProgressSaver.is_step_completed(tutorial_step):
+		print("step %d is already completed" % tutorial_step)
+		capture_mouse()
+		return
 
 	if _current_instance and is_instance_valid(_current_instance):
 		_current_instance.queue_free()
@@ -40,8 +40,7 @@ func show_step_scene(tutorial_step: int) -> void:
 	add_child(_current_instance)
 
 	hint_events.pause_by_tutorial()
-	mouse_mode.set_captured(false)
-	EditMode.is_enabled = true
+	release_mouse()
 
 	_current_instance.closed.connect(on_closed)
 
@@ -52,10 +51,22 @@ func on_closed() -> void:
 	_current_instance = null
 
 	hint_events.resume_after_tutorial_closed()
-	mouse_mode.set_captured(true)
+	capture_mouse()
 
 	ProgressSaver.mark_step_completed(_current_step)
+
+
+func release_mouse() -> void:
+	EditMode.is_enabled = true
+	mouse_mode.set_captured(false)
+
+
+func capture_mouse() -> void:
+	if dont_hide_mouse_steps.has(_current_step):
+		return
 	
+	mouse_mode.set_captured(true)
+
 	# Player camera thinks mouse moved when setting mouse mode to captured
 	await get_tree().process_frame
 	await get_tree().process_frame

@@ -31,9 +31,8 @@ func _ready() -> void:
 
 func _get_scene_for_url(url: String) -> PackedScene:
 	print("get scene for url: ", url)
-	var scene: PackedScene = get_world_1()
 	if url == "":
-		return scene
+		return get_world_1()
 	
 	var query := ""
 	var qmark := url.find("?")
@@ -47,7 +46,7 @@ func _get_scene_for_url(url: String) -> PackedScene:
 	print("query: ", query)
 
 	if query == "":
-		return scene
+		return get_world_1()
 
 	var params := {}
 	for pair in query.split("&", false):
@@ -61,9 +60,9 @@ func _get_scene_for_url(url: String) -> PackedScene:
 	print("params: ", params)
 
 	if params.has("world") and str(params["world"]) == "2":
-		scene = get_world_2()
+		return get_world_2()
 
-	return scene
+	return get_world_1()
 
 
 func get_world_1() -> PackedScene:

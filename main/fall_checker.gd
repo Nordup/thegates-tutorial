@@ -15,5 +15,6 @@ func _ready() -> void:
 
 
 func check_fallen() -> void:
+	if not player_spawner.player: return
 	if player_spawner.player.global_position.y < fall_height:
 		player_spawner.respawn_local_player()
