@@ -12,10 +12,11 @@ offset_bottom = 256.0
 text = "Step 3: Move Back and Forth"
 
 [node name="RichTextLabel" parent="Control" index="2"]
-offset_bottom = 410.0
+offset_bottom = 422.0
 text = "Nice work — your progress has been saved, so let’s keep going.
 
 To return to where you came from, press the Back button. You can also move forward again afterward.
 
 There are more buttons to explore, like Home, Bookmark, and Help.
+
 For now, use Back to return to the previous world and complete the tutorial."

@@ -5,16 +5,18 @@
 [node name="Step1" instance=ExtResource("1_ecjim")]
 
 [node name="Control" parent="." index="0"]
-offset_top = -207.0
-offset_bottom = 207.0
+offset_top = -221.0
+offset_bottom = 221.0
 
 [node name="Label" parent="Control" index="1"]
 text = "Step 2: Master Navigation"
 
 [node name="RichTextLabel" parent="Control" index="2"]
+offset_bottom = 372.0
 text = "Welcome to Tutorial World 2!
+
 Here, you’ll learn how to move around using the UI buttons.
 
-Start with the Reload button. Use it if the world crashes or if you want to restart.
+Start with the Reload button. Use it if you want to restart the game or refresh the world.
 
 Go ahead and give it a try."

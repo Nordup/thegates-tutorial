@@ -74,7 +74,7 @@ hints = Array[ExtResource("5_7d7f7")]([SubResource("Resource_jq7hn"), SubResourc
 script = ExtResource("10_0h1nt")
 events = ExtResource("5_dwyhe")
 
-[node name="TutorialUI" type="Control" parent="." node_paths=PackedStringArray("mouse_mode", "hint_manager")]
+[node name="TutorialUI" type="Control" parent="." node_paths=PackedStringArray("mouse_mode")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +83,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("11_yccff")
+hint_events = ExtResource("5_dwyhe")
 mouse_mode = NodePath("../MouseMode")
 tutorial_scenes = Array[PackedScene]([ExtResource("12_jjfy4"), ExtResource("13_yrwlm"), ExtResource("14_luj3g"), ExtResource("15_vpfe8")])
-hint_manager = NodePath("../HintManager")
