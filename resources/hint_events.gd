@@ -11,6 +11,7 @@ var last_requested_hint_id: StringName = &""
 
 
 func show_hint_emit(hint_id: StringName) -> void:
+	# if ProgressSaver.is_hint_shown(hint_id): return
 	if is_paused_by_tutorial:
 		last_requested_hint_id = hint_id
 		return
@@ -19,6 +20,7 @@ func show_hint_emit(hint_id: StringName) -> void:
 
 func hide_hint_emit(hint_id: StringName) -> void:
 	hide_hint.emit(hint_id)
+	# ProgressSaver.mark_hint_shown(hint_id)
 
 
 func is_showing(hint_id: StringName) -> bool:

@@ -55,6 +55,22 @@ func highest_completed() -> int:
 	return 0
 
 
+func mark_hint_shown(hint_id: StringName) -> void:
+	var config := ConfigFile.new()
+	config.load(CONFIG_PATH)
+	config.set_value(SECTION, "hint_" + str(hint_id), true)
+	config.save(CONFIG_PATH)
+
+
+func is_hint_shown(hint_id: StringName) -> bool:
+	var config := ConfigFile.new()
+	config.load(CONFIG_PATH)
+	var key := "hint_" + str(hint_id)
+	if config.has_section_key(SECTION, key):
+		return bool(config.get_value(SECTION, key))
+	return false
+
+
 func reset_progress() -> void:
 	var config := ConfigFile.new()
 	config.load(CONFIG_PATH)

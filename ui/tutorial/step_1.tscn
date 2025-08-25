@@ -1,7 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvgx53b4okdun"]
+[gd_scene load_steps=8 format=3 uid="uid://dvgx53b4okdun"]
 
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_5as52"]
 [ext_resource type="Script" path="res://ui/tutorial/step_ui.gd" id="1_r6p81"]
+[ext_resource type="Shader" path="res://ui/tutorial/background.gdshader" id="2_resbv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2auee"]
+shader = ExtResource("2_resbv")
+shader_parameter/radius = 3.3
+shader_parameter/amount = 1.0
+shader_parameter/tint_color = Color(0.45, 0.45, 0.45, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp7hc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h87v5"]
 
@@ -18,6 +27,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r6p81")
 close = NodePath("Control/Button")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_2auee")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wp7hc")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
