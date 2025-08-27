@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5ta5fqhyqc2l"]
+[gd_scene load_steps=4 format=3 uid="uid://c5ta5fqhyqc2l"]
 
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_kvx17"]
 [ext_resource type="Texture2D" uid="uid://dby155hgq37fl" path="res://assets/textures/arrow_left.png" id="2_rrq7k"]
+[ext_resource type="PackedScene" uid="uid://c21qobkcla64f" path="res://ui/hints/navigation_arrow.tscn" id="3_4734x"]
 
 [node name="WasdMovement" instance=ExtResource("1_kvx17")]
+
+[node name="NavigationArrow" parent="." index="0" instance=ExtResource("3_4734x")]
+layout_mode = 1
 
 [node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
 self_modulate = Color(10.169, 6.575, 10.17, 1)
