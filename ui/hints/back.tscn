@@ -5,9 +5,12 @@
 
 [node name="WasdMovement" instance=ExtResource("1_kvx17")]
 
-[node name="Label" parent="Control" index="1"]
-text = "Press back to return"
-
-[node name="TextureRect" parent="Control/WASD" index="0"]
-self_modulate = Color(36.723, 36.723, 36.723, 1)
+[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
+self_modulate = Color(10.169, 6.575, 10.17, 1)
 texture = ExtResource("2_rrq7k")
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
+text = "Back"
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+text = "Press back to return"

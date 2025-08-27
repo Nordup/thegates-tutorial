@@ -5,8 +5,11 @@
 
 [node name="WasdMovement" instance=ExtResource("1_8vrqi")]
 
-[node name="Label" parent="Control" index="1"]
-text = "Reload the world"
-
-[node name="TextureRect" parent="Control/WASD" index="0"]
+[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
 texture = ExtResource("2_kxt03")
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
+text = "Reload"
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+text = "Reload the world"

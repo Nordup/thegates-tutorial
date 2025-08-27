@@ -5,8 +5,11 @@
 
 [node name="WasdMovement" instance=ExtResource("1_sb3y7")]
 
-[node name="Label" parent="Control" index="1"]
-text = "Press space to jump"
-
-[node name="TextureRect" parent="Control/WASD" index="0"]
+[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
 texture = ExtResource("2_wmikc")
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
+text = "Space"
+
+[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+text = "Press space to jump"
