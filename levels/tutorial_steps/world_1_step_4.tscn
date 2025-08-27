@@ -7,30 +7,27 @@
 [node name="SpawnPoint6" parent="SpawnPoints" index="0"]
 transform = Transform3D(0.170966, 0, 0.985277, 0, 1, 0, -0.985277, 0, 0.170966, -17.177, 2.74742, -5.56454)
 
-[node name="HintAreaWASD" parent="SpawnPoints" index="1"]
-monitoring = false
-
-[node name="Portal" parent="Portal" index="0"]
+[node name="Portal" parent="Portals&Hints/Portal" index="0"]
 visible = false
 monitoring = false
 
-[node name="Portal2" parent="." index="5"]
-transform = Transform3D(0.211466, 0, 1.15891, 0, 1.17804, 0, -1.15891, 0, 0.211466, -3.25543, -0.0520199, -2.3833)
-
-[node name="Portal" parent="Portal2" index="0"]
+[node name="Portal" parent="Portals&Hints/Portal2" index="0"]
 visible = true
 monitoring = true
 
-[node name="HintAreaJump" parent="." index="6"]
+[node name="HintAreaWASD" parent="Portals&Hints" index="2"]
 monitoring = false
 
-[node name="HintAreaPortal" parent="." index="7"]
+[node name="HintAreaJump" parent="Portals&Hints" index="3"]
 monitoring = false
 
-[node name="HintMarker" parent="." index="8"]
+[node name="HintAreaPortal" parent="Portals&Hints" index="4"]
+monitoring = false
+
+[node name="HintMarker" parent="Portals&Hints" index="5"]
 visible = false
 
-[editable path="Portal"]
-[editable path="Portal2"]
-[editable path="HintAreaJump"]
-[editable path="HintAreaPortal"]
+[editable path="Portals&Hints/Portal"]
+[editable path="Portals&Hints/Portal2"]
+[editable path="Portals&Hints/HintAreaJump"]
+[editable path="Portals&Hints/HintAreaPortal"]

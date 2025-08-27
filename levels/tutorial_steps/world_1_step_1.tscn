@@ -37,6 +37,32 @@ stream = ExtResource("2_0plcn")
 volume_db = -23.38
 autoplay = true
 
+[node name="Rocks" type="Node3D" parent="."]
+
+[node name="rock_largeC2" parent="Rocks" instance=ExtResource("13_eo3pt")]
+transform = Transform3D(9.22433, 0, -13.9264, 0, 16.7043, 0, 13.9264, 0, 9.22433, -11.2475, -18.1159, 8.83301)
+
+[node name="rock_largeC3" parent="Rocks" instance=ExtResource("13_eo3pt")]
+transform = Transform3D(-6.62605, 0, -15.3339, 0, 16.7043, 0, 15.3339, 0, -6.62605, -7.04854, -18.1159, -11.6202)
+
+[node name="rock_smallFlatB2" parent="Rocks" instance=ExtResource("15_inxj1")]
+transform = Transform3D(21.5673, 0, 12.5984, 0, 24.9773, 0, -12.5984, 0, 21.5673, -29.794, -0.153337, 20.6844)
+
+[node name="rock_tallG2" parent="Rocks" instance=ExtResource("11_3sb3g")]
+transform = Transform3D(3.26616, 0, -10.5428, 0, 11.0371, 0, 10.5428, 0, 3.26616, -37.5076, 1.99066, 21.6539)
+
+[node name="rock_smallTopA2" parent="Rocks" instance=ExtResource("12_idl16")]
+transform = Transform3D(11.4161, 0, 5.77143, 0, 12.792, 0, -5.77143, 0, 11.4161, -15.1737, -0.00175476, -25.7866)
+
+[node name="rock_smallFlatC2" parent="Rocks" instance=ExtResource("13_q7b2b")]
+transform = Transform3D(38.3716, 0, 5.75453, 0, 38.8007, 0, -5.75453, 0, 38.3716, -35.7055, -6.24904, -8.56538)
+
+[node name="rock_smallG2" parent="Rocks" instance=ExtResource("14_6jvpn")]
+transform = Transform3D(5.24022, 0, 23.5224, 0, 24.0991, 0, -23.5224, 0, 5.24022, 88.388, -39.7844, 39.422)
+
+[node name="rock_smallTopB2" parent="Rocks" instance=ExtResource("15_2c0bu")]
+transform = Transform3D(-32.9159, 0, -2.20185, 0, 32.9894, 0, 2.20185, 0, -32.9159, 119.7, -24.3178, 26.1139)
+
 [node name="SpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
 script = ExtResource("5_7i5ax")
@@ -44,86 +70,64 @@ script = ExtResource("5_7i5ax")
 [node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
 transform = Transform3D(0.953943, 0, -0.29999, 0, 1, 0, 0.29999, 0, 0.953943, -17.177, 2.74742, -5.56454)
 
-[node name="HintAreaWASD" parent="SpawnPoints" instance=ExtResource("9_owteq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1814, 2.70397, -5.56282)
-hint_id = &"wasd"
+[node name="Portals&Hints" type="Node3D" parent="."]
 
-[node name="Portal" parent="." instance=ExtResource("8_xxk56")]
+[node name="Portal" parent="Portals&Hints" instance=ExtResource("8_xxk56")]
 transform = Transform3D(0.962226, 0, -0.558681, 0, 1.11266, 0, 0.558681, 0, 0.962226, -23.8817, 1.09649, 24.1626)
 url = "tutorial.gate?world=2"
 hint_id = &"portal"
 hint_events = ExtResource("9_ola2q")
 
-[node name="doorOpen2" parent="Portal" index="1"]
+[node name="doorOpen2" parent="Portals&Hints/Portal" index="1"]
 transform = Transform3D(0.998487, 0, 0.054985, 0, 1, 0, -0.054985, 0, 0.998487, 0, 0, 0)
 
-[node name="Sprite3D" parent="Portal" index="2"]
+[node name="Sprite3D" parent="Portals&Hints/Portal" index="2"]
 texture = null
 
-[node name="Sprite3D2" parent="Portal" index="3"]
+[node name="Sprite3D2" parent="Portals&Hints/Portal" index="3"]
 texture = null
 
-[node name="Portal2" parent="." instance=ExtResource("8_xxk56")]
+[node name="Portal2" parent="Portals&Hints" instance=ExtResource("8_xxk56")]
 transform = Transform3D(0.211466, 0, 1.15891, 0, 1.17804, 0, -1.15891, 0, 0.211466, -3.25543, -0.0520199, -2.3833)
 url = "world.gate"
 hint_events = ExtResource("9_ola2q")
 
-[node name="Portal" parent="Portal2" index="0"]
+[node name="Portal" parent="Portals&Hints/Portal2" index="0"]
 visible = false
 monitoring = false
 
-[node name="Sprite3D" parent="Portal2" index="2"]
+[node name="Sprite3D" parent="Portals&Hints/Portal2" index="2"]
 texture = null
 
-[node name="Sprite3D2" parent="Portal2" index="3"]
+[node name="Sprite3D2" parent="Portals&Hints/Portal2" index="3"]
 texture = null
 
-[node name="HintAreaJump" parent="." instance=ExtResource("9_owteq")]
+[node name="HintAreaWASD" parent="Portals&Hints" instance=ExtResource("9_owteq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1814, 1.90735e-06, -4.56282)
+hint_id = &"wasd"
+
+[node name="HintAreaJump" parent="Portals&Hints" instance=ExtResource("9_owteq")]
 transform = Transform3D(0.736369, 0, -0.67658, 0, 1, 0, 0.67658, 0, 0.736369, -18.1404, 0, 13.271)
 hint_id = &"jump"
 
-[node name="CollisionShape3D" parent="HintAreaJump" index="0"]
+[node name="CollisionShape3D" parent="Portals&Hints/HintAreaJump" index="0"]
 transform = Transform3D(0.999866, 0, 0.016388, 0, 1, 0, -0.016388, 0, 0.999866, 1.60028, 0.591125, 4.25997)
 shape = SubResource("BoxShape3D_gh5es")
 
-[node name="HintAreaPortal" parent="." instance=ExtResource("9_owteq")]
+[node name="HintAreaPortal" parent="Portals&Hints" instance=ExtResource("9_owteq")]
 transform = Transform3D(0.574177, 0, 0.818731, 0, 1, 0, -0.818731, 0, 0.574177, -21.6189, 1.8, 21.3735)
 hint_id = &"portal"
 
-[node name="CollisionShape3D" parent="HintAreaPortal" index="0"]
+[node name="CollisionShape3D" parent="Portals&Hints/HintAreaPortal" index="0"]
 transform = Transform3D(0.99664, 0, -0.0819038, 0, 1, 0, 0.0819038, 0, 0.99664, -2.89192, 0.623975, -0.0520334)
 shape = SubResource("BoxShape3D_7h7q4")
 
-[node name="HintMarker" parent="." instance=ExtResource("11_pa5fh")]
+[node name="HintMarker" parent="Portals&Hints" instance=ExtResource("11_pa5fh")]
 transform = Transform3D(0.574177, 0, 0.818731, 0, 1, 0, -0.818731, 0, 0.574177, -20.9293, 0.982934, 19.5735)
 hint_show_id = &"wasd"
 hint_hide_id = &"portal"
 
-[node name="rock_largeC2" parent="." instance=ExtResource("13_eo3pt")]
-transform = Transform3D(9.22433, 0, -13.9264, 0, 16.7043, 0, 13.9264, 0, 9.22433, -11.2475, -18.1159, 8.83301)
-
-[node name="rock_largeC3" parent="." instance=ExtResource("13_eo3pt")]
-transform = Transform3D(-6.62605, 0, -15.3339, 0, 16.7043, 0, 15.3339, 0, -6.62605, -7.04854, -18.1159, -11.6202)
-
-[node name="rock_smallFlatB2" parent="." instance=ExtResource("15_inxj1")]
-transform = Transform3D(21.5673, 0, 12.5984, 0, 24.9773, 0, -12.5984, 0, 21.5673, -29.794, -0.153337, 20.6844)
-
-[node name="rock_tallG2" parent="." instance=ExtResource("11_3sb3g")]
-transform = Transform3D(3.26616, 0, -10.5428, 0, 11.0371, 0, 10.5428, 0, 3.26616, -37.5076, 1.99066, 21.6539)
-
-[node name="rock_smallTopA2" parent="." instance=ExtResource("12_idl16")]
-transform = Transform3D(11.4161, 0, 5.77143, 0, 12.792, 0, -5.77143, 0, 11.4161, -15.1737, -0.00175476, -25.7866)
-
-[node name="rock_smallFlatC2" parent="." instance=ExtResource("13_q7b2b")]
-transform = Transform3D(38.3716, 0, 5.75453, 0, 38.8007, 0, -5.75453, 0, 38.3716, -35.7055, -6.24904, -8.56538)
-
-[node name="rock_smallG2" parent="." instance=ExtResource("14_6jvpn")]
-transform = Transform3D(5.24022, 0, 23.5224, 0, 24.0991, 0, -23.5224, 0, 5.24022, 88.388, -39.7844, 39.422)
-
-[node name="rock_smallTopB2" parent="." instance=ExtResource("15_2c0bu")]
-transform = Transform3D(-32.9159, 0, -2.20185, 0, 32.9894, 0, 2.20185, 0, -32.9159, 119.7, -24.3178, 26.1139)
-
-[editable path="Portal"]
-[editable path="Portal2"]
-[editable path="HintAreaJump"]
-[editable path="HintAreaPortal"]
+[editable path="Portals&Hints/Portal"]
+[editable path="Portals&Hints/Portal2"]
+[editable path="Portals&Hints/HintAreaJump"]
+[editable path="Portals&Hints/HintAreaPortal"]
