@@ -73,7 +73,7 @@ transform = Transform3D(0.953943, 0, -0.29999, 0, 1, 0, 0.29999, 0, 0.953943, -1
 [node name="Portals&Hints" type="Node3D" parent="."]
 
 [node name="Portal" parent="Portals&Hints" instance=ExtResource("8_xxk56")]
-transform = Transform3D(0.962226, 0, -0.558681, 0, 1.11266, 0, 0.558681, 0, 0.962226, -23.8817, 1.09649, 24.1626)
+transform = Transform3D(1.2972, 0, -0.753172, 0, 1.5, 0, 0.753172, 0, 1.2972, -23.8817, 1.09649, 24.1626)
 url = "tutorial.gate?world=2"
 hint_id = &"portal"
 hint_events = ExtResource("9_ola2q")
@@ -81,26 +81,14 @@ hint_events = ExtResource("9_ola2q")
 [node name="doorOpen2" parent="Portals&Hints/Portal" index="1"]
 transform = Transform3D(0.998487, 0, 0.054985, 0, 1, 0, -0.054985, 0, 0.998487, 0, 0, 0)
 
-[node name="Sprite3D" parent="Portals&Hints/Portal" index="2"]
-texture = null
-
-[node name="Sprite3D2" parent="Portals&Hints/Portal" index="3"]
-texture = null
-
 [node name="Portal2" parent="Portals&Hints" instance=ExtResource("8_xxk56")]
-transform = Transform3D(0.211466, 0, 1.15891, 0, 1.17804, 0, -1.15891, 0, 0.211466, -3.25543, -0.0520199, -2.3833)
+transform = Transform3D(0.269259, 0, 1.47564, 0, 1.5, 0, -1.47564, 0, 0.269259, -3.25543, -0.0520199, -2.3833)
 url = "world.gate"
 hint_events = ExtResource("9_ola2q")
 
 [node name="Portal" parent="Portals&Hints/Portal2" index="0"]
 visible = false
 monitoring = false
-
-[node name="Sprite3D" parent="Portals&Hints/Portal2" index="2"]
-texture = null
-
-[node name="Sprite3D2" parent="Portals&Hints/Portal2" index="3"]
-texture = null
 
 [node name="HintAreaWASD" parent="Portals&Hints" instance=ExtResource("9_owteq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1814, 1.90735e-06, -4.56282)
@@ -123,7 +111,7 @@ transform = Transform3D(0.99664, 0, -0.0819038, 0, 1, 0, 0.0819038, 0, 0.99664, 
 shape = SubResource("BoxShape3D_7h7q4")
 
 [node name="HintMarker" parent="Portals&Hints" instance=ExtResource("11_pa5fh")]
-transform = Transform3D(0.574177, 0, 0.818731, 0, 1, 0, -0.818731, 0, 0.574177, -20.9293, 0.982934, 19.5735)
+transform = Transform3D(0.574177, 0, 0.818731, 0, 1, 0, -0.818731, 0, 0.574177, -20.9293, 1.9013, 19.5735)
 hint_show_id = &"wasd"
 hint_hide_id = &"portal"
 

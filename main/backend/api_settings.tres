@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ApiSettings" load_steps=2 format=3 uid="uid://df0pm2rdlwwy4"]
-
-[ext_resource type="Script" path="res://main/backend/api_settings.gd" id="1_tbovu"]
-
-[resource]
-script = ExtResource("1_tbovu")
-local_url = "http://127.0.0.1:8000"
-remote_url = "https://app.thegates.io"
-host_type = 1

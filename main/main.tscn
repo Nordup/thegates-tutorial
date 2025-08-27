@@ -1,14 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=11 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_iupwk"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
 [ext_resource type="PackedScene" uid="uid://4bmt6lu3pjim" path="res://levels/tutorial_steps/world_2_step_2.tscn" id="3_5wa4a"]
 [ext_resource type="PackedScene" uid="uid://0evowduak34n" path="res://levels/tutorial_steps/world_1_step_4.tscn" id="3_7w4tl"]
-[ext_resource type="Script" path="res://levels/interactable/interactable_input_handler.gd" id="4_86hc2"]
 [ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="PackedScene" uid="uid://dl2wfxkk7idbc" path="res://levels/tutorial_steps/world_2_step_3.tscn" id="5_0rujr"]
-[ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
 [ext_resource type="PackedScene" uid="uid://b8hgjo1tpct7f" path="res://levels/tutorial_steps/world_1_step_1.tscn" id="8_jb76a"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
@@ -23,14 +21,8 @@ world_1_step_4 = ExtResource("3_7w4tl")
 world_2_step_2 = ExtResource("3_5wa4a")
 world_2_step_3 = ExtResource("5_0rujr")
 
-[node name="Independents" type="Node" parent="."]
-
-[node name="ResolutionChanger" type="Node" parent="Independents"]
+[node name="ResolutionChanger" type="Node" parent="."]
 script = ExtResource("1_mexsf")
-
-[node name="InteractableInputHandler" type="Node" parent="Independents"]
-script = ExtResource("4_86hc2")
-events = ExtResource("5_irmxe")
 
 [node name="PlayerSpawner" type="Node" parent="."]
 script = ExtResource("4_edyrb")

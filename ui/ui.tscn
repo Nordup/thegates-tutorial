@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=21 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/hints/hint_definition.gd" id="5_7d7f7"]
 [ext_resource type="Resource" uid="uid://ctx2y84xsulik" path="res://resources/hint_events.res" id="5_dwyhe"]
-[ext_resource type="PackedScene" uid="uid://md4ik7uho32v" path="res://ui/interactable/interactable_panel.tscn" id="6_mid3e"]
 [ext_resource type="Script" path="res://ui/hints/hint_manager.gd" id="7_cx6s0"]
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="7_r8w35"]
 [ext_resource type="PackedScene" uid="uid://cu37qr3fl4hkn" path="res://ui/hints/jump.tscn" id="8_k6m4u"]
@@ -54,9 +53,6 @@ mouse_filter = 1
 [node name="MouseMode" type="Control" parent="."]
 anchors_preset = 0
 script = ExtResource("2_rhohj")
-
-[node name="Interactable" parent="." instance=ExtResource("6_mid3e")]
-layout_mode = 1
 
 [node name="HintManager" type="Control" parent="."]
 layout_mode = 1
