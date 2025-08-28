@@ -42,7 +42,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/thegates_export/plugin.cfg")
+enabled=PackedStringArray("res://addons/thegates_export/plugin.cfg", "res://addons/yamms/plugin.cfg")
 
 [input]
 
