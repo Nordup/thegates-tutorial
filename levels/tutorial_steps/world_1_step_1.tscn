@@ -526,13 +526,18 @@ transform = Transform3D(-0.344526, 0, -1.8001, 0, 1.83277, 0, 1.8001, 0, -0.3445
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6474, 1.27964, -9.43171)
 
 [node name="log_stack2" parent="Tent" instance=ExtResource("30_umfyj")]
-transform = Transform3D(-0.120587, 0, -0.992703, 0, 1, 0, 0.992703, 0, -0.120587, -34.2594, 1.21291, -0.145161)
+transform = Transform3D(-0.0757537, 0, -0.623623, 0, 0.628207, 0, 0.623623, 0, -0.0757537, -34.3961, 1.21291, -0.126659)
+
+[node name="log_stack3" parent="Tent" instance=ExtResource("30_umfyj")]
+transform = Transform3D(0.0734347, 0, 0.623901, 0, 0.628207, 0, -0.623901, 0, 0.0734347, -34.341, 1.21291, -0.629566)
 
 [node name="mushroom_redGroup2" parent="Tent" instance=ExtResource("31_lf8wx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8507, 1.26768, -8.66436)
 
 [node name="path_woodEnd2" parent="Tent" instance=ExtResource("32_q0mql")]
 transform = Transform3D(0.986601, 0, -0.163154, 0, 1, 0, 0.163154, 0, 0.986601, -30.7873, 1.23889, -3.88403)
+
+[node name="Node3D" type="Node3D" parent="Tent"]
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
