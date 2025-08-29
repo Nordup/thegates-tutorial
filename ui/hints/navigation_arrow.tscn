@@ -79,6 +79,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_121ql")
 
 [node name="Panel3" type="Panel" parent="."]
+visible = false
 clip_children = 2
 layout_mode = 1
 offset_right = 145.0
@@ -99,6 +100,6 @@ top_level = true
 position = Vector2(890, 509)
 texture = ExtResource("2_o43no")
 script = ExtResource("3_yeti7")
-target_position = Vector2(65, 0)
-hide_distance = 250.0
+target_position = Vector2(40, 0)
+hide_distance = 120.0
 offset_distance = 70.0
