@@ -318,7 +318,7 @@ environment = ExtResource("1_3c4h5")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0plcn")
-volume_db = -23.38
+volume_db = -10.0
 autoplay = true
 
 [node name="Rocks" type="Node3D" parent="."]
