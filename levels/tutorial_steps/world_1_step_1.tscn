@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://b8hgjo1tpct7f"]
+[gd_scene load_steps=66 format=4 uid="uid://b8hgjo1tpct7f"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
@@ -28,6 +28,10 @@
 [ext_resource type="PackedScene" uid="uid://dhhraaichv36x" path="res://addons/kenney_nature-kit/tree_pineSmallD.glb" id="25_qariy"]
 [ext_resource type="PackedScene" uid="uid://ltyo5p7vn5o7" path="res://addons/kenney_nature-kit/rock_largeB.glb" id="27_oc737"]
 [ext_resource type="PackedScene" uid="uid://fua8vkhj15mh" path="res://addons/kenney_nature-kit/rock_tallA.glb" id="28_fpk5p"]
+[ext_resource type="PackedScene" uid="uid://mh5i0yqse2pa" path="res://addons/kenney_nature-kit/campfire_planks.glb" id="29_x0nwd"]
+[ext_resource type="PackedScene" uid="uid://c6p24s6wm4ohl" path="res://addons/kenney_nature-kit/log_stack.glb" id="30_umfyj"]
+[ext_resource type="PackedScene" uid="uid://dfsen2wala0x2" path="res://addons/kenney_nature-kit/mushroom_redGroup.glb" id="31_lf8wx"]
+[ext_resource type="PackedScene" uid="uid://def4njgo0haci" path="res://addons/kenney_nature-kit/path_woodEnd.glb" id="32_q0mql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gh5es"]
 size = Vector3(36.0083, 1.18225, 15.5169)
@@ -290,7 +294,7 @@ buffer = PackedFloat32Array(-1.23798, 0, 0.771835, -25.0666, 0, 1.45887, 0, -7.2
 [node name="Tutorial" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.74806, -0.209967, 0.629539, 0.0253582, 0.938892, 0.343276, -0.663146, 0.272755, -0.697023, 0, 22.7338, 0)
+transform = Transform3D(-0.74806, -0.168904, 0.641777, 0.0253582, 0.959087, 0.281972, -0.663146, 0.227206, -0.713172, 0, 22.7338, 0)
 shadow_enabled = true
 shadow_opacity = 0.57
 
@@ -388,7 +392,7 @@ transform = Transform3D(1.16802, 0, 0.594935, 0, 1.31081, 0, -0.594935, 0, 1.168
 transform = Transform3D(-0.941495, 0, 1.32836, 0, 1.62818, 0, -1.32836, 0, -0.941495, -5.40099, -0.00175858, -17.601)
 
 [node name="TreeCollisions20" parent="Trees" instance=ExtResource("23_cy5p0")]
-transform = Transform3D(0.823704, 0, 1.05134, 0, 1.33559, 0, -1.05134, 0, 0.823704, -4.37904, -0.00175858, -12.4929)
+transform = Transform3D(0.823704, 0, 1.05134, 0, 1.33559, 0, -1.05134, 0, 0.823704, -4.76658, -0.00175858, -14.2698)
 
 [node name="TreeCollisions21" parent="Trees" instance=ExtResource("23_cy5p0")]
 transform = Transform3D(0.147145, 0, 1.36257, 0, 1.3705, 0, -1.36257, 0, 0.147145, 8.16319, -0.00175858, -16.3196)
@@ -448,7 +452,7 @@ transform = Transform3D(0.913269, 0, 0.511126, 0, 1.04657, 0, -0.511126, 0, 0.91
 transform = Transform3D(-1.07319, 0, 0.233897, 0, 1.09838, 0, -0.233897, 0, -1.07319, 10.7669, -0.00175858, -14.9161)
 
 [node name="TreeCollisions42" parent="Trees" instance=ExtResource("23_cy5p0")]
-transform = Transform3D(1.36586, 0, 1.16116, 0, 1.79273, 0, -1.16116, 0, 1.36586, -8.25744, -0.00175858, -13.0952)
+transform = Transform3D(1.36586, 0, 1.16116, 0, 1.79273, 0, -1.16116, 0, 1.36586, -9.81784, -0.00175858, -14.9307)
 
 [node name="TreeCollisions43" parent="Trees" instance=ExtResource("23_cy5p0")]
 transform = Transform3D(1.39319, 0, 0.766194, 0, 1.58998, 0, -0.766194, 0, 1.39319, -2.5727, -0.00175858, 20.1196)
@@ -686,6 +690,18 @@ max_random_rotation = Vector3(0, 180, 0)
 
 [node name="tent_detailedClosed2" parent="." instance=ExtResource("24_dy63p")]
 transform = Transform3D(-0.344526, 0, -1.8001, 0, 1.83277, 0, 1.8001, 0, -0.344526, -34.1107, 1.32563, -4.71532)
+
+[node name="campfire_planks2" parent="." instance=ExtResource("29_x0nwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6474, 1.27964, -9.43171)
+
+[node name="log_stack2" parent="." instance=ExtResource("30_umfyj")]
+transform = Transform3D(-0.120587, 0, -0.992703, 0, 1, 0, 0.992703, 0, -0.120587, -34.2594, 1.21291, -0.145161)
+
+[node name="mushroom_redGroup2" parent="." instance=ExtResource("31_lf8wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8507, 1.26768, -8.66436)
+
+[node name="path_woodEnd2" parent="." instance=ExtResource("32_q0mql")]
+transform = Transform3D(0.986601, 0, -0.163154, 0, 1, 0, 0.163154, 0, 0.986601, -30.7873, 1.23889, -3.88403)
 
 [editable path="Portals&Hints/Portal"]
 [editable path="Portals&Hints/Portal2"]
