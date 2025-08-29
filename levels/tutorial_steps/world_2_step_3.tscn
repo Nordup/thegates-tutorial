@@ -4,5 +4,5 @@
 
 [node name="TutorialSecond" instance=ExtResource("1_sf72b")]
 
-[node name="HintAreaBack" parent="." index="4"]
+[node name="HintAreaBack" parent="." index="5"]
 hint_id = &"back"

@@ -84,6 +84,6 @@ autoplay = "idle"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_upfnt")
-volume_db = -18.324
+volume_db = -25.0
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_entered"]

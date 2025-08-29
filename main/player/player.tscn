@@ -63,9 +63,9 @@ tilt_upper_limit = 0.48
 tilt_lower_limit = -0.8
 
 [node name="CameraSpringArm" type="SpringArm3D" parent="CameraController"]
-transform = Transform3D(-1, -5.15034e-15, -8.74228e-08, -3.23484e-08, 0.929023, 0.370022, 8.12178e-08, 0.370022, -0.929023, 0, 2.33984, 0)
+transform = Transform3D(-1, -2.51131e-08, -8.37381e-08, -3.23484e-08, 0.99616, 0.0875552, 8.12178e-08, 0.0875552, -0.99616, 0, 2.33984, 0)
 shape = SubResource("SeparationRayShape3D_gqx4v")
-spring_length = 6.0
+spring_length = 7.0
 
 [node name="CameraThirdPersonPivot" type="Marker3D" parent="CameraController/CameraSpringArm"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 0, 0, 1, 1.42109e-14, 2.38419e-07, 10)

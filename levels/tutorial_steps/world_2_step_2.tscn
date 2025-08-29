@@ -1,17 +1,134 @@
-[gd_scene load_steps=8 format=3 uid="uid://4bmt6lu3pjim"]
+[gd_scene load_steps=37 format=3 uid="uid://4bmt6lu3pjim"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_xitxc"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_6sjpq"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="3_8s8cf"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="4_tr0nf"]
-[ext_resource type="PackedScene" uid="uid://yxm1mi5tc5bx" path="res://addons/kenney_nature-kit/cliff_blockHalf_rock.glb" id="5_o1ir4"]
-[ext_resource type="PackedScene" uid="uid://c0mo8tek77du4" path="res://main/player/model/character_skin.tscn" id="7_jfn86"]
+[ext_resource type="PackedScene" uid="uid://fua8vkhj15mh" path="res://addons/kenney_nature-kit/rock_tallA.glb" id="8_mpxaj"]
+[ext_resource type="Script" path="res://addons/yamms/MultiScatter.gd" id="9_itvs4"]
+[ext_resource type="PackedScene" uid="uid://ulfvvm32d52x" path="res://addons/kenney_nature-kit/rock_smallTopA.glb" id="10_586v6"]
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="10_gmscl"]
+[ext_resource type="ArrayMesh" uid="uid://brl27uqny8wdj" path="res://addons/kenney_nature-kit/meshes/grass.res" id="10_scm26"]
+[ext_resource type="PackedScene" uid="uid://ih4yvy4qv51x" path="res://addons/kenney_nature-kit/rock_largeE.glb" id="11_87lkk"]
+[ext_resource type="Script" path="res://addons/yamms/MultiScatterItem.gd" id="11_pr187"]
+[ext_resource type="Script" path="res://addons/yamms/PMDropOnCollider.gd" id="12_vojyu"]
+[ext_resource type="ArrayMesh" uid="uid://ct5btv7cwtoik" path="res://addons/kenney_nature-kit/meshes/plant_bushLargeTriangle.res" id="13_173io"]
+[ext_resource type="ArrayMesh" uid="uid://c3lukokjh4whx" path="res://addons/kenney_nature-kit/meshes/plant_brushDetailed.res" id="14_q57o3"]
+[ext_resource type="ArrayMesh" uid="uid://bx61v8hkyaiqh" path="res://addons/kenney_nature-kit/meshes/tree_pineDefaultA.res" id="15_ll7u5"]
+[ext_resource type="ArrayMesh" uid="uid://cobshcb37klv" path="res://addons/kenney_nature-kit/meshes/tree_pineSmallD.res" id="16_6j0da"]
+[ext_resource type="ArrayMesh" uid="uid://bbdtkrln6pp3n" path="res://addons/kenney_nature-kit/meshes/flower_purpleA.res" id="17_vi64r"]
+[ext_resource type="ArrayMesh" uid="uid://c0708v6hx8cfd" path="res://addons/kenney_nature-kit/meshes/flower_redB_NE.res" id="18_h17ex"]
+[ext_resource type="ArrayMesh" uid="uid://cydnogkb88sbq" path="res://addons/kenney_nature-kit/meshes/flower_yellowC.res" id="19_1gf8a"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2ooex"]
+dof_blur_far_distance = 100.0
+
+[sub_resource type="Curve3D" id="Curve3D_ye3xt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.48919, 0, 27.7437, 0, 0, 0, 0, 0, 0, -18.5293, 0, 17.9081, 0, 0, 0, 0, 0, 0, -11.8758, 0, 7.34924, 0, 0, 0, 0, 0, 0, -8.98297, 0, 0.0442549, 0, 0, 0, 0, 0, 0, 19.2222, 0, 0.695718, 0, 0, 0, 0, 0, 0, 8.30175, 0, 4.23944, 0, 0, 0, 0, 0, 0, 8.30175, 0, 9.95279, 0, 0, 0, 0, 0, 0, 3.52857, 0, 11.3269, 0, 0, 0, 0, 0, 0, 1.79287, 0, 16.534, 0, 0, 0, 0, 0, 0, -0.0874696, 0, 16.9679, 0, 0, 0, 0, 0, 0, -1.2446, 0, 21.8134, 0, 0, 0, 0, 0, 0, -4.78833, 0, 21.7411, 0, 0, 0, 0, 0, 0, -5.65618, 0, 26.0804, 0, 0, 0, 0, 0, 0, -9.48919, 0, 27.7437),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 14
+
+[sub_resource type="MultiMesh" id="MultiMesh_ac7j0"]
+transform_format = 1
+instance_count = 80
+mesh = ExtResource("10_scm26")
+buffer = PackedFloat32Array(1, 0, 0, -4.99273, 0, 1, 0, -0.806462, 0, 0, 1, 4.72214, 1, 0, 0, -10.9338, 0, 1, 0, -0.806462, 0, 0, 1, 16.6162, 1, 0, 0, -9.51953, 0, 1, 0, -0.806462, 0, 0, 1, 25.981, 1, 0, 0, -5.21814, 0, 1, 0, -0.806462, 0, 0, 1, 23.0744, 1, 0, 0, -8.76432, 0, 1, 0, -0.806462, 0, 0, 1, 11.3425, 1, 0, 0, -12.5161, 0, 1, 0, -0.806462, 0, 0, 1, 13.7846, 1, 0, 0, -6.74177, 0, 1, 0, -0.806462, 0, 0, 1, 15.7181, 1, 0, 0, -13.1018, 0, 1, 0, -0.806462, 0, 0, 1, 17.0412, 1, 0, 0, -6.84001, 0, 1, 0, -0.806462, 0, 0, 1, 12.4592, 1, 0, 0, -11.3589, 0, 1, 0, -0.806462, 0, 0, 1, 21.5763, 1, 0, 0, -8.25302, 0, 1, 0, -0.806462, 0, 0, 1, 25.8787, 1, 0, 0, -2.87454, 0, 1, 0, -0.806462, 0, 0, 1, 5.0104, 1, 0, 0, -6.90322, 0, 1, 0, -0.806462, 0, 0, 1, 15.0467, 1, 0, 0, -16.4671, 0, 1, 0, -0.806462, 0, 0, 1, 15.5045, 1, 0, 0, 5.07244, 0, 1, 0, -0.806462, 0, 0, 1, 5.9305, 1, 0, 0, -8.78263, 0, 1, 0, -0.806462, 0, 0, 1, 22.75, 1, 0, 0, -7.51837, 0, 1, 0, -0.806462, 0, 0, 1, 3.29312, 1, 0, 0, 5.58918, 0, 1, 0, -0.806462, 0, 0, 1, 1.71739, 1, 0, 0, -1.4237, 0, 1, 0, -0.806462, 0, 0, 1, 17.9743, 1, 0, 0, -8.39673, 0, 1, 0, -0.806462, 0, 0, 1, 26.8436, 1, 0, 0, -10.5184, 0, 1, 0, -0.806462, 0, 0, 1, 5.73123, 1, 0, 0, -2.93623, 0, 1, 0, -0.806462, 0, 0, 1, 20.4568, 1, 0, 0, -9.12084, 0, 1, 0, -0.806462, 0, 0, 1, 3.26369, 1, 0, 0, -5.2758, 0, 1, 0, -0.806462, 0, 0, 1, 22.0705, 1, 0, 0, -9.9819, 0, 1, 0, -0.806462, 0, 0, 1, 18.8451, 1, 0, 0, -0.490934, 0, 1, 0, -0.806462, 0, 0, 1, 8.16819, 1, 0, 0, 1.42728, 0, 1, 0, -0.806462, 0, 0, 1, 14.9943, 1, 0, 0, -7.23563, 0, 1, 0, -0.806462, 0, 0, 1, 23.7765, 1, 0, 0, -15.6471, 0, 1, 0, -0.806462, 0, 0, 1, 18.3855, 1, 0, 0, -6.10021, 0, 1, 0, -0.806462, 0, 0, 1, 13.656, 1, 0, 0, 3.46803, 0, 1, 0, -0.806462, 0, 0, 1, 3.83291, 1, 0, 0, -8.49559, 0, 1, 0, -0.806462, 0, 0, 1, 8.27933, 1, 0, 0, -8.87777, 0, 1, 0, -0.806462, 0, 0, 1, 23.8176, 1, 0, 0, -2.34505, 0, 1, 0, -0.806462, 0, 0, 1, 20.3616, 1, 0, 0, -9.96203, 0, 1, 0, -0.806462, 0, 0, 1, 7.38049, 1, 0, 0, -11.4378, 0, 1, 0, -0.806462, 0, 0, 1, 20.1768, 1, 0, 0, 1.6749, 0, 1, 0, -0.806462, 0, 0, 1, 10.5775, 1, 0, 0, 3.8767, 0, 1, 0, -0.806462, 0, 0, 1, 11.0758, 1, 0, 0, -6.52095, 0, 1, 0, -0.806462, 0, 0, 1, 20.2637, 1, 0, 0, 1.95759, 0, 1, 0, -0.806462, 0, 0, 1, 13.7625, 1, 0, 0, -8.31945, 0, 1, 0, -0.806462, 0, 0, 1, 25.2344, 1, 0, 0, -5.76471, 0, 1, 0, -0.806462, 0, 0, 1, 22.2153, 1, 0, 0, -12.4808, 0, 1, 0, -0.806462, 0, 0, 1, 16.5552, 1, 0, 0, -9.66462, 0, 1, 0, -0.806462, 0, 0, 1, 2.70304, 1, 0, 0, -0.0609298, 0, 1, 0, -0.806462, 0, 0, 1, 11.0383, 1, 0, 0, -5.70492, 0, 1, 0, -0.806462, 0, 0, 1, 22.7688, 1, 0, 0, 5.69153, 0, 1, 0, -0.806462, 0, 0, 1, 8.02476, 1, 0, 0, -8.32641, 0, 1, 0, -0.806462, 0, 0, 1, 18.809, 1, 0, 0, -4.98233, 0, 1, 0, -0.806462, 0, 0, 1, 10.0628, 1, 0, 0, -15.494, 0, 1, 0, -0.806462, 0, 0, 1, 19.6087, 1, 0, 0, -10.0163, 0, 1, 0, -0.806462, 0, 0, 1, 9.03096, 1, 0, 0, -9.99929, 0, 1, 0, -0.806462, 0, 0, 1, 21.4364, 1, 0, 0, -3.04748, 0, 1, 0, -0.806462, 0, 0, 1, 3.68616, 1, 0, 0, -8.24649, 0, 1, 0, -0.806462, 0, 0, 1, 21.0707, 1, 0, 0, -4.38936, 0, 1, 0, -0.806462, 0, 0, 1, 21.431, 1, 0, 0, -2.29764, 0, 1, 0, -0.806462, 0, 0, 1, 6.21302, 1, 0, 0, -6.51274, 0, 1, 0, -0.806462, 0, 0, 1, 23.674, 1, 0, 0, -13.3053, 0, 1, 0, -0.806462, 0, 0, 1, 14.9447, 1, 0, 0, -0.0950336, 0, 1, 0, -0.806462, 0, 0, 1, 1.26387, 1, 0, 0, -9.90031, 0, 1, 0, -0.806462, 0, 0, 1, 15.4472, 1, 0, 0, 17.5105, 0, 1, 0, -0.806462, 0, 0, 1, 1.03749, 1, 0, 0, -8.4883, 0, 1, 0, -0.806462, 0, 0, 1, 18.2587, 1, 0, 0, -8.33955, 0, 1, 0, -0.806462, 0, 0, 1, 24.0811, 1, 0, 0, -11.0071, 0, 1, 0, -0.806462, 0, 0, 1, 18.0334, 1, 0, 0, -7.78858, 0, 1, 0, -0.806462, 0, 0, 1, 15.6662, 1, 0, 0, -5.17889, 0, 1, 0, -0.806462, 0, 0, 1, 18.1422, 1, 0, 0, -12.4249, 0, 1, 0, -0.806462, 0, 0, 1, 23.0556, 1, 0, 0, 5.20946, 0, 1, 0, -0.806462, 0, 0, 1, 9.19074, 1, 0, 0, -14.9991, 0, 1, 0, -0.806462, 0, 0, 1, 12.98, 1, 0, 0, 7.7327, 0, 1, 0, -0.806462, 0, 0, 1, 2.15926, 1, 0, 0, -5.47843, 0, 1, 0, -0.806462, 0, 0, 1, 17.9439, 1, 0, 0, -16.5133, 0, 1, 0, -0.806462, 0, 0, 1, 15.14, 1, 0, 0, -15.2575, 0, 1, 0, -0.806462, 0, 0, 1, 16.0696, 1, 0, 0, -8.54558, 0, 1, 0, -0.806462, 0, 0, 1, 24.0093, 1, 0, 0, -11.3989, 0, 1, 0, -0.806462, 0, 0, 1, 17.7872, 1, 0, 0, 4.88373, 0, 1, 0, -0.806462, 0, 0, 1, 9.28726, 1, 0, 0, -13.0828, 0, 1, 0, -0.806462, 0, 0, 1, 22.9097, 1, 0, 0, 6.76725, 0, 1, 0, -0.806462, 0, 0, 1, 7.40178, 1, 0, 0, -15.2144, 0, 1, 0, -0.806462, 0, 0, 1, 14.6623, 1, 0, 0, -6.44533, 0, 1, 0, -0.806462, 0, 0, 1, 7.01896)
+
+[sub_resource type="Gradient" id="Gradient_3xy8u"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.258303, 1)
+colors = PackedColorArray(0.0338533, 0.0338533, 0.0338533, 1, 0.728822, 0.728822, 0.728822, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7n7as"]
+gradient = SubResource("Gradient_3xy8u")
+fill = 1
+fill_from = Vector2(0.435897, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="MultiMesh" id="MultiMesh_tfkfr"]
+transform_format = 1
+instance_count = 10
+mesh = ExtResource("13_173io")
+buffer = PackedFloat32Array(1, 0, 0, -10.3306, 0, 1, 0, -0.806462, 0, 0, 1, 23.0759, 1, 0, 0, -5.52446, 0, 1, 0, -0.806462, 0, 0, 1, 10.0348, 1, 0, 0, 11.4005, 0, 1, 0, -0.806462, 0, 0, 1, 0.721331, 1, 0, 0, -15.6728, 0, 1, 0, -0.806462, 0, 0, 1, 14.5403, 1, 0, 0, -7.09751, 0, 1, 0, -0.806462, 0, 0, 1, 16.5511, 1, 0, 0, -14.1318, 0, 1, 0, -0.806462, 0, 0, 1, 11.895, 1, 0, 0, -9.91412, 0, 1, 0, -0.806462, 0, 0, 1, 9.81411, 1, 0, 0, 2.12517, 0, 1, 0, -0.806462, 0, 0, 1, 12.4267, 1, 0, 0, -8.06453, 0, 1, 0, -0.806462, 0, 0, 1, 17.3968, 1, 0, 0, -9.43434, 0, 1, 0, -0.806462, 0, 0, 1, 25.9233)
+
+[sub_resource type="MultiMesh" id="MultiMesh_fhote"]
+transform_format = 1
+instance_count = 10
+mesh = ExtResource("14_q57o3")
+buffer = PackedFloat32Array(1, 0, 0, -9.8197, 0, 1, 0, -0.806462, 0, 0, 1, 10.3473, 1, 0, 0, -14.8572, 0, 1, 0, -0.806462, 0, 0, 1, 13.7664, 1, 0, 0, -11.4783, 0, 1, 0, -0.806462, 0, 0, 1, 23.0272, 1, 0, 0, -9.96258, 0, 1, 0, -0.806462, 0, 0, 1, 20.3268, 1, 0, 0, -7.59557, 0, 1, 0, -0.806462, 0, 0, 1, 14.2828, 1, 0, 0, -9.53399, 0, 1, 0, -0.806462, 0, 0, 1, 26.4734, 1, 0, 0, -0.476763, 0, 1, 0, -0.806462, 0, 0, 1, 16.5631, 1, 0, 0, -1.61464, 0, 1, 0, -0.806462, 0, 0, 1, 16.8404, 1, 0, 0, -14.5653, 0, 1, 0, -0.806462, 0, 0, 1, 18.6158, 1, 0, 0, -9.74815, 0, 1, 0, -0.806462, 0, 0, 1, 24.2695)
+
+[sub_resource type="Curve3D" id="Curve3D_v5d0d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.48919, 0, 27.7437, 0, 0, 0, 0, 0, 0, -18.5293, 0, 17.9081, 0, 0, 0, 0, 0, 0, -11.8758, 0, 7.34924, 0, 0, 0, 0, 0, 0, -8.98297, 0, 0.0442549, 0, 0, 0, 0, 0, 0, 19.2222, 0, 0.695718, 0, 0, 0, 0, 0, 0, 8.30175, 0, 4.23944, 0, 0, 0, 0, 0, 0, 8.30175, 0, 9.95279, 0, 0, 0, 0, 0, 0, 3.52857, 0, 11.3269, 0, 0, 0, 0, 0, 0, 1.79287, 0, 16.534, 0, 0, 0, 0, 0, 0, -0.0874696, 0, 16.9679, 0, 0, 0, 0, 0, 0, -1.2446, 0, 21.8134, 0, 0, 0, 0, 0, 0, -4.78833, 0, 21.7411, 0, 0, 0, 0, 0, 0, -5.65618, 0, 26.0804, 0, 0, 0, 0, 0, 0, -9.48919, 0, 27.7437),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 14
+
+[sub_resource type="MultiMesh" id="MultiMesh_wd6ot"]
+transform_format = 1
+instance_count = 28
+mesh = ExtResource("15_ll7u5")
+buffer = PackedFloat32Array(1, 0, 0, -9.51953, 0, 1, 0, -0.806462, 0, 0, 1, 25.981, 1, 0, 0, 3.24175, 0, 1, 0, -0.806462, 0, 0, 1, 5.2002, 1, 0, 0, 3.73043, 0, 1, 0, -0.806462, 0, 0, 1, 8.64926, 1, 0, 0, -5.21814, 0, 1, 0, -0.806462, 0, 0, 1, 23.0744, 1, 0, 0, -6.34567, 0, 1, 0, -0.806462, 0, 0, 1, 25.7317, 1, 0, 0, 5.69765, 0, 1, 0, -0.806462, 0, 0, 1, 8.84597, 1, 0, 0, 1.1472, 0, 1, 0, -0.806462, 0, 0, 1, 13.399, 1, 0, 0, -13.17, 0, 1, 0, -0.806462, 0, 0, 1, 19.7724, 1, 0, 0, -11.8447, 0, 1, 0, -0.806462, 0, 0, 1, 15.5145, 1, 0, 0, -8.76432, 0, 1, 0, -0.806462, 0, 0, 1, 11.3425, 1, 0, 0, 15.346, 0, 1, 0, -0.806462, 0, 0, 1, 0.834452, 1, 0, 0, -13.5561, 0, 1, 0, -0.806462, 0, 0, 1, 11.2452, 1, 0, 0, -6.74177, 0, 1, 0, -0.806462, 0, 0, 1, 15.7181, 1, 0, 0, -8.24855, 0, 1, 0, -0.806462, 0, 0, 1, 18.3642, 1, 0, 0, -11.3589, 0, 1, 0, -0.806462, 0, 0, 1, 21.5763, 1, 0, 0, -8.25302, 0, 1, 0, -0.806462, 0, 0, 1, 25.8787, 1, 0, 0, -13.9281, 0, 1, 0, -0.806462, 0, 0, 1, 17.6029, 1, 0, 0, -16.4671, 0, 1, 0, -0.806462, 0, 0, 1, 15.5045, 1, 0, 0, 9.3837, 0, 1, 0, -0.806462, 0, 0, 1, 0.681696, 1, 0, 0, -8.78263, 0, 1, 0, -0.806462, 0, 0, 1, 22.75, 1, 0, 0, -11.674, 0, 1, 0, -0.806462, 0, 0, 1, 22.9064, 1, 0, 0, -16.2239, 0, 1, 0, -0.806462, 0, 0, 1, 18.857, 1, 0, 0, 7.38076, 0, 1, 0, -0.806462, 0, 0, 1, 5.63046, 1, 0, 0, -3.50374, 0, 1, 0, -0.806462, 0, 0, 1, 20.3978, 1, 0, 0, -13.9741, 0, 1, 0, -0.806462, 0, 0, 1, 19.0165, 1, 0, 0, -5.05676, 0, 1, 0, -0.806462, 0, 0, 1, 19.805, 1, 0, 0, -8.28267, 0, 1, 0, -0.806462, 0, 0, 1, 18.3992, 1, 0, 0, -2.93623, 0, 1, 0, -0.806462, 0, 0, 1, 20.4568)
+
+[sub_resource type="Gradient" id="Gradient_7jjxn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.258303, 1)
+colors = PackedColorArray(0.0338533, 0.0338533, 0.0338533, 1, 0.728822, 0.728822, 0.728822, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vqkyc"]
+gradient = SubResource("Gradient_7jjxn")
+fill = 1
+fill_from = Vector2(0.435897, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="MultiMesh" id="MultiMesh_e04ml"]
+transform_format = 1
+instance_count = 3
+mesh = ExtResource("16_6j0da")
+buffer = PackedFloat32Array(1, 0, 0, -15.4193, 0, 1, 0, -0.806462, 0, 0, 1, 17.5286, 1, 0, 0, -8.67713, 0, 1, 0, -0.806462, 0, 0, 1, 18.4055, 1, 0, 0, -5.2758, 0, 1, 0, -0.806462, 0, 0, 1, 22.0705)
+
+[sub_resource type="Gradient" id="Gradient_kn3vj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.258303, 1)
+colors = PackedColorArray(0.0338533, 0.0338533, 0.0338533, 1, 0.728822, 0.728822, 0.728822, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l5hg2"]
+gradient = SubResource("Gradient_kn3vj")
+fill = 1
+fill_from = Vector2(0.435897, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="MultiMesh" id="MultiMesh_4ie7n"]
+transform_format = 1
+instance_count = 20
+mesh = ExtResource("17_vi64r")
+buffer = PackedFloat32Array(1, 0, 0, -10.6591, 0, 1, 0, -0.806462, 0, 0, 1, 12.6561, 1, 0, 0, -9.51953, 0, 1, 0, -0.806462, 0, 0, 1, 25.981, 1, 0, 0, -6.34567, 0, 1, 0, -0.806462, 0, 0, 1, 25.7317, 1, 0, 0, 1.1472, 0, 1, 0, -0.806462, 0, 0, 1, 13.399, 1, 0, 0, -13.17, 0, 1, 0, -0.806462, 0, 0, 1, 19.7724, 1, 0, 0, 8.23209, 0, 1, 0, -0.806462, 0, 0, 1, 5.16883, 1, 0, 0, -8.76432, 0, 1, 0, -0.806462, 0, 0, 1, 11.3425, 1, 0, 0, -6.74177, 0, 1, 0, -0.806462, 0, 0, 1, 15.7181, 1, 0, 0, -8.24855, 0, 1, 0, -0.806462, 0, 0, 1, 18.3642, 1, 0, 0, -11.3589, 0, 1, 0, -0.806462, 0, 0, 1, 21.5763, 1, 0, 0, -8.25302, 0, 1, 0, -0.806462, 0, 0, 1, 25.8787, 1, 0, 0, -13.9281, 0, 1, 0, -0.806462, 0, 0, 1, 17.6029, 1, 0, 0, -11.674, 0, 1, 0, -0.806462, 0, 0, 1, 22.9064, 1, 0, 0, -3.50374, 0, 1, 0, -0.806462, 0, 0, 1, 20.3978, 1, 0, 0, -13.5984, 0, 1, 0, -0.806462, 0, 0, 1, 11.024, 1, 0, 0, -1.88202, 0, 1, 0, -0.806462, 0, 0, 1, 9.08842, 1, 0, 0, -5.05676, 0, 1, 0, -0.806462, 0, 0, 1, 19.805, 1, 0, 0, -2.93623, 0, 1, 0, -0.806462, 0, 0, 1, 20.4568, 1, 0, 0, -8.67713, 0, 1, 0, -0.806462, 0, 0, 1, 18.4055, 1, 0, 0, -13.9777, 0, 1, 0, -0.806462, 0, 0, 1, 20.2862)
+
+[sub_resource type="MultiMesh" id="MultiMesh_25i2h"]
+transform_format = 1
+instance_count = 12
+mesh = ExtResource("18_h17ex")
+buffer = PackedFloat32Array(1, 0, 0, -12.3311, 0, 1, 0, -0.806462, 0, 0, 1, 12.7696, 1, 0, 0, -4.51523, 0, 1, 0, -0.806462, 0, 0, 1, 21.1768, 1, 0, 0, -7.72281, 0, 1, 0, -0.806462, 0, 0, 1, 18.3826, 1, 0, 0, -3.17785, 0, 1, 0, -0.806462, 0, 0, 1, 5.96759, 1, 0, 0, -10.3206, 0, 1, 0, -0.806462, 0, 0, 1, 7.37217, 1, 0, 0, 1.55114, 0, 1, 0, -0.806462, 0, 0, 1, 7.96699, 1, 0, 0, 3.46803, 0, 1, 0, -0.806462, 0, 0, 1, 3.83291, 1, 0, 0, -14.3826, 0, 1, 0, -0.806462, 0, 0, 1, 15.4753, 1, 0, 0, -7.45768, 0, 1, 0, -0.806462, 0, 0, 1, 18.375, 1, 0, 0, 1.36234, 0, 1, 0, -0.806462, 0, 0, 1, 8.91874, 1, 0, 0, -9.96203, 0, 1, 0, -0.806462, 0, 0, 1, 7.38049, 1, 0, 0, -11.4378, 0, 1, 0, -0.806462, 0, 0, 1, 20.1768)
+
+[sub_resource type="MultiMesh" id="MultiMesh_e4xb2"]
+transform_format = 1
+instance_count = 10
+mesh = ExtResource("19_1gf8a")
+buffer = PackedFloat32Array(1, 0, 0, -14.7071, 0, 1, 0, -0.806462, 0, 0, 1, 14.8288, 1, 0, 0, -3.13622, 0, 1, 0, -0.806462, 0, 0, 1, 14.4201, 1, 0, 0, -10.288, 0, 1, 0, -0.806462, 0, 0, 1, 12.0757, 1, 0, 0, 1.95759, 0, 1, 0, -0.806462, 0, 0, 1, 13.7625, 1, 0, 0, -9.61963, 0, 1, 0, -0.806462, 0, 0, 1, 6.6402, 1, 0, 0, -5.71622, 0, 1, 0, -0.806462, 0, 0, 1, 7.56418, 1, 0, 0, -3.10704, 0, 1, 0, -0.806462, 0, 0, 1, 9.74407, 1, 0, 0, 12.3564, 0, 1, 0, -0.806462, 0, 0, 1, 1.29692, 1, 0, 0, -5.70492, 0, 1, 0, -0.806462, 0, 0, 1, 22.7688, 1, 0, 0, -12.7605, 0, 1, 0, -0.806462, 0, 0, 1, 21.7093)
 
 [node name="TutorialSecond" type="Node3D"]
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.32205e-08, -1.50416e-07, 0, 0.99616, 0.0875552, 1.50996e-07, 0.0875552, -0.99616, -5.86167e-07, 2.95273, -6.97312)
+top_level = true
+attributes = SubResource("CameraAttributesPractical_2ooex")
+current = true
+fov = 50.0
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
+transform = Transform3D(-0.212719, 0.170457, -0.96213, -0.0218456, 0.98359, 0.179089, 0.976869, 0.0591139, -0.205505, 0, 7.7599, 0)
 shadow_enabled = true
 shadow_opacity = 0.57
 
@@ -24,18 +141,134 @@ volume_db = -23.38
 autoplay = true
 
 [node name="SpawnPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
 script = ExtResource("3_8s8cf")
 
 [node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("4_tr0nf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154951, 2.6999, 2.41061)
-
-[node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("5_o1ir4")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -18, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0136718, 0)
 
 [node name="HintAreaBack" parent="." instance=ExtResource("10_gmscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150597, 0, 3.41233)
 hint_id = &"reload"
 
-[node name="CharacterSkin" parent="." instance=ExtResource("7_jfn86")]
-transform = Transform3D(-1.27839, 0, 0.784685, 0, 1.5, 0, -0.784685, 0, -1.27839, -6.81428, -1.43051e-06, 11.2574)
+[node name="Rocks" type="Node3D" parent="."]
+
+[node name="rock_tallA2" parent="Rocks" instance=ExtResource("8_mpxaj")]
+transform = Transform3D(4.71236, 0, 4.40173, 0, 6.44837, 0, -4.40173, 0, 4.71236, 5.39205, 0, 20.8331)
+
+[node name="rock_smallTopA2" parent="Rocks" instance=ExtResource("10_586v6")]
+transform = Transform3D(-7.1629, 0, -14.1152, 0, 15.8286, 0, 14.1152, 0, -7.1629, 20.1334, -3.13541, 12.3218)
+
+[node name="rock_largeE2" parent="Rocks" instance=ExtResource("11_87lkk")]
+transform = Transform3D(13.0693, 0, 0, 0, 13.0693, 0, 0, 0, 13.0693, 3.47542, -12.6897, 9.27095)
+
+[node name="MultiScatter" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78093, 0)
+curve = SubResource("Curve3D_ye3xt")
+script = ExtResource("9_itvs4")
+
+[node name="MultiScatterItem" type="MultiMeshInstance3D" parent="MultiScatter"]
+multimesh = SubResource("MultiMesh_ac7j0")
+script = ExtResource("11_pr187")
+percentage = 80.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter/MultiScatterItem"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatterItem2" type="MultiMeshInstance3D" parent="MultiScatter"]
+multimesh = SubResource("MultiMesh_tfkfr")
+script = ExtResource("11_pr187")
+percentage = 10.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter/MultiScatterItem2"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatterItem3" type="MultiMeshInstance3D" parent="MultiScatter"]
+multimesh = SubResource("MultiMesh_fhote")
+script = ExtResource("11_pr187")
+percentage = 10.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter/MultiScatterItem3"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatter2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78093, 0)
+curve = SubResource("Curve3D_v5d0d")
+script = ExtResource("9_itvs4")
+amount = 35
+
+[node name="MultiScatterItem" type="MultiMeshInstance3D" parent="MultiScatter2"]
+multimesh = SubResource("MultiMesh_wd6ot")
+script = ExtResource("11_pr187")
+percentage = 80.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter2/MultiScatterItem"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_vqkyc")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatterItem2" type="MultiMeshInstance3D" parent="MultiScatter2"]
+multimesh = SubResource("MultiMesh_e04ml")
+script = ExtResource("11_pr187")
+percentage = 10.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter2/MultiScatterItem2"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_l5hg2")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatter3" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78093, 0)
+curve = SubResource("Curve3D_ye3xt")
+script = ExtResource("9_itvs4")
+amount = 40
+
+[node name="MultiScatterItem" type="MultiMeshInstance3D" parent="MultiScatter3"]
+multimesh = SubResource("MultiMesh_4ie7n")
+script = ExtResource("11_pr187")
+percentage = 50.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter3/MultiScatterItem"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatterItem2" type="MultiMeshInstance3D" parent="MultiScatter3"]
+multimesh = SubResource("MultiMesh_25i2h")
+script = ExtResource("11_pr187")
+percentage = 30.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter3/MultiScatterItem2"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
+
+[node name="MultiScatterItem3" type="MultiMeshInstance3D" parent="MultiScatter3"]
+multimesh = SubResource("MultiMesh_e4xb2")
+script = ExtResource("11_pr187")
+percentage = 25.0
+
+[node name="PMDropOnCollider" type="Node3D" parent="MultiScatter3/MultiScatterItem3"]
+transform = Transform3D(18.9754, 0, 0.183481, 0, 18.9763, 0, -0.183481, 0, 18.9754, 0.279682, 1.90735e-06, 9.80999)
+visible = false
+script = ExtResource("12_vojyu")
+density_map = SubResource("GradientTexture2D_7n7as")
+max_random_rotation = Vector3(0, 180, 0)
