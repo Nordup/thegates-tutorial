@@ -126,7 +126,7 @@ mouse_filter = 2
 visible = false
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
-text = "[b]Portals[/b] are links between worlds.
+text = "[b]Portals[/b] are like links in a website.
 
 They’re how you explore the new internet. Each world can connect to many others.
 

@@ -4,20 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://r0yhppd8wwq7" path="res://assets/textures/mouse_arrow.png" id="2_o43no"]
 [ext_resource type="Script" path="res://ui/hints/arrow_follow.gd" id="3_yeti7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1o6q"]
-bg_color = Color(0.043, 0.043, 0.043, 0.6)
-
 [sub_resource type="Gradient" id="Gradient_xcems"]
 interpolation_mode = 2
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.541176)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.7)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1vpln"]
 gradient = SubResource("Gradient_xcems")
 fill = 1
-fill_to = Vector2(0, 0.209402)
+fill_from = Vector2(0.0726496, 0)
+fill_to = Vector2(0.0726496, 0.188034)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_121ql"]
 texture = SubResource("GradientTexture2D_1vpln")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1o6q"]
+bg_color = Color(0, 0, 0, 0.7)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jno2h"]
 bg_color = Color(0, 0, 0, 1)
@@ -59,24 +60,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q1o6q")
+theme_override_constants/separation = 0
 
-[node name="Panel2" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_121ql")
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1o6q")
 
 [node name="Panel3" type="Panel" parent="."]
 visible = false

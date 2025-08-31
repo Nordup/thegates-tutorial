@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5ta5fqhyqc2l"]
 
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_kvx17"]
-[ext_resource type="Texture2D" uid="uid://dby155hgq37fl" path="res://assets/textures/arrow_left.png" id="2_rrq7k"]
 [ext_resource type="PackedScene" uid="uid://c21qobkcla64f" path="res://ui/hints/navigation_arrow.tscn" id="3_4734x"]
+[ext_resource type="Texture2D" uid="uid://brpdori85ehxw" path="res://assets/textures/arrow.png" id="3_alben"]
 [ext_resource type="Script" path="res://ui/hints/highlight_button.gd" id="4_7hbb7"]
 
 [node name="WasdMovement" instance=ExtResource("1_kvx17")]
@@ -11,8 +11,7 @@
 layout_mode = 1
 
 [node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
-self_modulate = Color(10.169, 6.575, 10.17, 1)
-texture = ExtResource("2_rrq7k")
+texture = ExtResource("3_alben")
 
 [node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
 text = "Back"
@@ -22,4 +21,4 @@ text = "Press back to return"
 
 [node name="HighlightButton" type="Node" parent="." index="3"]
 script = ExtResource("4_7hbb7")
-button_id = &"navigation_back"
+button_id = "back"

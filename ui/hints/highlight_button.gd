@@ -1,6 +1,6 @@
 extends Node
 
-@export var button_id: StringName
+@export var button_id: String
 
 
 func _ready() -> void:

@@ -21,4 +21,4 @@ text = "Reload the world"
 
 [node name="HighlightButton" type="Node" parent="." index="3"]
 script = ExtResource("4_knq3a")
-button_id = &"navigation_reload"
+button_id = "reload"
