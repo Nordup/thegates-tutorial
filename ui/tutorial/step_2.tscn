@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_ecjim"]
 
 [node name="Step" instance=ExtResource("1_ecjim")]
+complete_immediately = true
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Step 2: Master Navigation"

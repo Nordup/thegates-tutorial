@@ -37,12 +37,17 @@ func show_step_scene(tutorial_step: int) -> void:
 		return
 
 	_current_instance = scene.instantiate()
+	_current_instance.completed.connect(on_completed)
+	_current_instance.closed.connect(on_closed)
+
 	add_child(_current_instance)
 
 	hint_events.pause_by_tutorial()
 	release_mouse()
 
-	_current_instance.closed.connect(on_closed)
+
+func on_completed() -> void:
+	ProgressSaver.mark_step_completed(_current_step)
 
 
 func on_closed() -> void:
@@ -52,8 +57,6 @@ func on_closed() -> void:
 
 	hint_events.resume_after_tutorial_closed()
 	capture_mouse()
-
-	ProgressSaver.mark_step_completed(_current_step)
 
 
 func release_mouse() -> void:

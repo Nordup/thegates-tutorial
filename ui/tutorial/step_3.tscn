@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_t7bc3"]
 
 [node name="Step" instance=ExtResource("1_t7bc3")]
+complete_immediately = true
 
 [node name="Label" parent="TextureRect/MarginContainer/VBoxContainer" index="0"]
 text = "Step 3: Move Back and Forth"
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
-theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 text = "Nice work — your progress has been saved, so let’s keep going.
 
 To return to where you came from, press the Back button. You can also move forward again afterward.
