@@ -4,7 +4,7 @@ class_name HintManager
 @export var events: HintEvents
 @export var hints: Array[HintDefinition] = []
 
-@export var show_delay_sec: float = 1
+@export var show_delay_sec: float = 0.0
 @export var hide_delay_sec: float = 1
 
 var _id_to_scene: Dictionary = {}
