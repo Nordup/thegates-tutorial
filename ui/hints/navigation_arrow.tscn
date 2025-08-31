@@ -11,8 +11,8 @@ colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.7)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1vpln"]
 gradient = SubResource("Gradient_xcems")
 fill = 1
-fill_from = Vector2(0.0726496, 0)
-fill_to = Vector2(0.0726496, 0.188034)
+fill_from = Vector2(0.09, 0)
+fill_to = Vector2(0.09, 0.188)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_121ql"]
 texture = SubResource("GradientTexture2D_1vpln")
@@ -106,6 +106,8 @@ top_level = true
 position = Vector2(890, 509)
 texture = ExtResource("2_o43no")
 script = ExtResource("3_yeti7")
-target_position = Vector2(40, 0)
-hide_distance = 120.0
-offset_distance = 70.0
+target_position = Vector2(70, 0)
+hide_distance = 150.0
+offset_distance = 100.0
+jump_amplitude = 25.0
+jump_speed = 5.0

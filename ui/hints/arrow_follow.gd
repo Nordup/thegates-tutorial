@@ -5,10 +5,14 @@ extends Sprite2D
 @export var offset_distance: float = 48.0
 @export var rotation_offset_degrees: float = 0.0
 
+@export var jump_amplitude: float = 8.0
+@export var jump_speed: float = 3.0
+
+var elapsed_time: float = 0.0
+
 
 func _process(delta: float) -> void:
-	if not visible:
-		return
+	elapsed_time += delta
 
 	# Get mouse in viewport space and convert to global canvas space.
 	var viewport := get_viewport()
@@ -20,9 +24,13 @@ func _process(delta: float) -> void:
 	if to_target_from_mouse.length() > 0.001:
 		offset_direction = to_target_from_mouse.normalized()
 
-	global_position = mouse_position + offset_direction * offset_distance
+	var base_position: Vector2 = mouse_position + offset_direction * offset_distance
 
-	var distance_to_target: float = mouse_position.distance_to(target_position) + delta * 0.0
+	# Jump-like bob along the pointing direction
+	var bob: float = sin(elapsed_time * jump_speed) * jump_amplitude
+	global_position = base_position + offset_direction * bob
+
+	var distance_to_target: float = mouse_position.distance_to(target_position)
 	visible = distance_to_target > hide_distance
 
 	var to_target: Vector2 = target_position - global_position
