@@ -544,7 +544,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70397, 1)
 script = ExtResource("5_7i5ax")
 
 [node name="SpawnPoint6" parent="SpawnPoints" instance=ExtResource("6_8o6qg")]
-transform = Transform3D(0.953943, 0, -0.29999, 0, 1, 0, 0.29999, 0, 0.953943, -17.177, 2.74742, -5.56454)
+transform = Transform3D(0.967855, 0, -0.251512, 0, 1, 0, 0.251512, 0, 0.967855, -17.177, 2.74742, -5.56454)
 
 [node name="Portals&Hints" type="Node3D" parent="."]
 
