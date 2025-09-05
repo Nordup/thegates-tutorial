@@ -15,9 +15,10 @@ func _process(delta: float) -> void:
 	elapsed_time += delta
 
 	# Get mouse in viewport space and convert to global canvas space.
-	var viewport := get_viewport()
-	var mouse_vp: Vector2 = viewport.get_mouse_position()
-	var mouse_position: Vector2 = viewport.get_canvas_transform().affine_inverse() * mouse_vp
+	# var viewport := get_viewport()
+	# var mouse_vp: Vector2 = viewport.get_mouse_position()
+	# var mouse_position: Vector2 = viewport.get_canvas_transform().affine_inverse() * mouse_vp
+	var mouse_position: Vector2 = get_global_mouse_position()
 
 	var to_target_from_mouse: Vector2 = target_position - mouse_position
 	var offset_direction: Vector2 = Vector2.ZERO

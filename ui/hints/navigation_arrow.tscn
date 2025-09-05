@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c21qobkcla64f"]
+[gd_scene load_steps=16 format=3 uid="uid://c21qobkcla64f"]
 
 [ext_resource type="Shader" path="res://ui/hints/navigation_arrow.gdshader" id="1_dovjr"]
 [ext_resource type="Texture2D" uid="uid://r0yhppd8wwq7" path="res://assets/textures/mouse_arrow.png" id="2_o43no"]
 [ext_resource type="Script" path="res://ui/hints/arrow_follow.gd" id="3_yeti7"]
+[ext_resource type="Script" path="res://ui/hints/dark_background.gd" id="4_j47k2"]
+[ext_resource type="Shader" path="res://ui/hints/dark_background.gdshader" id="5_aaadt"]
 
 [sub_resource type="Gradient" id="Gradient_xcems"]
 interpolation_mode = 2
@@ -16,6 +18,13 @@ fill_to = Vector2(0.09, 0.188)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_121ql"]
 texture = SubResource("GradientTexture2D_1vpln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_our0g"]
+shader = ExtResource("5_aaadt")
+shader_parameter/clip_rect = Vector4(0, 0, 0, 0)
+shader_parameter/clip_enabled = false
+shader_parameter/bg_color = Color(0, 0, 0, 0.7)
+shader_parameter/panel_size = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1o6q"]
 bg_color = Color(0, 0, 0, 0.7)
@@ -60,31 +69,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="DarkBackground" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="DarkBackground"]
 custom_minimum_size = Vector2(1080, 0)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="Panel2" type="Panel" parent="HBoxContainer/AspectRatioContainer"]
+[node name="Panel2" type="Panel" parent="DarkBackground/AspectRatioContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_121ql")
 
-[node name="Panel" type="Panel" parent="HBoxContainer"]
-layout_mode = 2
+[node name="Panel" type="Panel" parent="DarkBackground" node_paths=PackedStringArray("clip_by")]
+material = SubResource("ShaderMaterial_our0g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_q1o6q")
+script = ExtResource("4_j47k2")
+clip_by = NodePath("../AspectRatioContainer/Panel2")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Rainbow" type="Panel" parent="."]
 visible = false
 clip_children = 2
 layout_mode = 1
@@ -92,7 +113,7 @@ offset_right = 145.0
 offset_bottom = 2.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jno2h")
 
-[node name="Panel" type="Panel" parent="Panel3"]
+[node name="Panel" type="Panel" parent="Rainbow"]
 material = SubResource("ShaderMaterial_nmdbx")
 layout_mode = 0
 offset_left = -1.0
