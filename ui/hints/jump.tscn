@@ -6,6 +6,8 @@
 [node name="WasdMovement2" instance=ExtResource("1_sb3y7")]
 
 [node name="TextureRect" parent="Panel" index="0"]
+offset_top = -46.0
+offset_bottom = 42.0
 texture = ExtResource("2_wmikc")
 
 [node name="Label" parent="Panel" index="1"]

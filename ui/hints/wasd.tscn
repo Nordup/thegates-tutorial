@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-600, 398), Vector2(-66, 398)]
+"values": [Vector2(-600, 319), Vector2(-66, 319)]
 }
 
 [sub_resource type="Animation" id="Animation_eg0uj"]
@@ -67,9 +67,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -66.0
-offset_top = -142.0
+offset_top = -221.0
 offset_right = 511.0
-offset_bottom = -54.0
+offset_bottom = -133.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tgyoh")
 
@@ -80,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.5
-offset_top = -34.0
-offset_right = -90.5
-offset_bottom = 34.0
+offset_left = -167.5
+offset_top = -43.0
+offset_right = -75.5
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1mygk")
@@ -97,9 +97,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -332.0
+offset_left = -340.0
 offset_top = -12.0
-offset_right = -40.0
+offset_right = -48.0
 offset_bottom = 13.0
 grow_horizontal = 0
 grow_vertical = 2

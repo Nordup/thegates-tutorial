@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjomdnu8djfp1"]
+[gd_scene load_steps=6 format=3 uid="uid://cjomdnu8djfp1"]
 
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_8vrqi"]
-[ext_resource type="Texture2D" uid="uid://dupl8pnkn473o" path="res://assets/textures/reload.png" id="2_kxt03"]
 [ext_resource type="PackedScene" uid="uid://c21qobkcla64f" path="res://ui/hints/navigation_arrow.tscn" id="3_cjycg"]
+[ext_resource type="Texture2D" uid="uid://wvw7kgetr8ds" path="res://assets/textures/reload.svg" id="3_ue6tm"]
 [ext_resource type="Script" path="res://ui/hints/highlight_button.gd" id="4_knq3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_silx3"]
+bg_color = Color(0.82, 0.82, 0.82, 0.909804)
+skew = Vector2(0.5, 0)
 
 [node name="WasdMovement" instance=ExtResource("1_8vrqi")]
 
 [node name="NavigationArrow" parent="." index="0" instance=ExtResource("3_cjycg")]
 layout_mode = 1
 
+[node name="Panel" parent="." index="1"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_silx3")
+
 [node name="TextureRect" parent="Panel" index="0"]
-texture = ExtResource("2_kxt03")
+self_modulate = Color(0.233925, 0.233925, 0.233925, 1)
+offset_left = -129.5
+offset_top = -17.0
+offset_right = -73.5
+offset_bottom = 17.0
+texture = ExtResource("3_ue6tm")
 
 [node name="Label" parent="Panel" index="1"]
 text = "Reload the world"
