@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvgx53b4okdun"]
+[gd_scene load_steps=13 format=3 uid="uid://dvgx53b4okdun"]
 
 [ext_resource type="Script" path="res://ui/tutorial/step_ui.gd" id="1_gvp75"]
 [ext_resource type="Shader" path="res://ui/tutorial/background.gdshader" id="2_yhn4n"]
@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://bek4nfqxc8143" path="res://fonts/Inter-Italic.otf" id="5_qxve5"]
 [ext_resource type="Texture2D" uid="uid://d2nd4itkta7mx" path="res://assets/textures/button.png" id="6_b4a7l"]
 [ext_resource type="FontFile" uid="uid://c5hxhq1fmfxoy" path="res://fonts/Inter-BoldItalic.otf" id="6_cq46w"]
-[ext_resource type="FontFile" uid="uid://hxouqh67i60x" path="res://fonts/Monospace.ttf" id="6_cxwy4"]
 [ext_resource type="Texture2D" uid="uid://biagx3jeotdfy" path="res://assets/textures/button_hover.png" id="7_qt5lp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2auee"]
@@ -99,7 +98,6 @@ theme_override_constants/margin_right = 70
 layout_mode = 2
 theme_override_colors/default_color = Color(0.946667, 0.92, 1, 0.882353)
 theme_override_fonts/normal_font = ExtResource("5_qxve5")
-theme_override_fonts/mono_font = ExtResource("6_cxwy4")
 theme_override_fonts/bold_font = ExtResource("6_cq46w")
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
