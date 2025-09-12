@@ -1,23 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5ta5fqhyqc2l"]
+[gd_scene load_steps=5 format=3 uid="uid://c5ta5fqhyqc2l"]
 
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_kvx17"]
 [ext_resource type="Texture2D" uid="uid://cgxfxsl7jp543" path="res://assets/textures/arrow_left.svg" id="3_82pta"]
 [ext_resource type="PackedScene" uid="uid://c21qobkcla64f" path="res://ui/hints/navigation_arrow.tscn" id="3_4734x"]
 [ext_resource type="Script" path="res://ui/hints/highlight_button.gd" id="4_7hbb7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0aw2b"]
-bg_color = Color(0.819608, 0.819608, 0.819608, 0.909804)
-skew = Vector2(0.5, 0)
-
 [node name="WasdMovement2" instance=ExtResource("1_kvx17")]
 
 [node name="NavigationArrow" parent="." index="0" instance=ExtResource("3_4734x")]
 layout_mode = 1
-
-[node name="Panel" parent="." index="1"]
-offset_top = -142.0
-offset_bottom = -54.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_0aw2b")
 
 [node name="TextureRect" parent="Panel" index="0"]
 self_modulate = Color(0.233925, 0.233925, 0.233925, 1)
