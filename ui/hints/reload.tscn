@@ -10,13 +10,10 @@
 [node name="NavigationArrow" parent="." index="0" instance=ExtResource("3_cjycg")]
 layout_mode = 1
 
-[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
+[node name="TextureRect" parent="Panel" index="0"]
 texture = ExtResource("2_kxt03")
 
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
-text = "Reload"
-
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+[node name="Label" parent="Panel" index="1"]
 text = "Reload the world"
 
 [node name="HighlightButton" type="Node" parent="." index="3"]

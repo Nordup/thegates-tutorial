@@ -5,18 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://brpdori85ehxw" path="res://assets/textures/arrow.png" id="3_alben"]
 [ext_resource type="Script" path="res://ui/hints/highlight_button.gd" id="4_7hbb7"]
 
-[node name="WasdMovement" instance=ExtResource("1_kvx17")]
+[node name="WasdMovement2" instance=ExtResource("1_kvx17")]
 
 [node name="NavigationArrow" parent="." index="0" instance=ExtResource("3_4734x")]
 layout_mode = 1
 
-[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
+[node name="TextureRect" parent="Panel" index="0"]
 texture = ExtResource("3_alben")
 
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
-text = "Back"
-
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+[node name="Label" parent="Panel" index="1"]
 text = "Press back to return"
 
 [node name="HighlightButton" type="Node" parent="." index="3"]

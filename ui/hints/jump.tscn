@@ -3,13 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://sos3l6aro7ff" path="res://ui/hints/wasd.tscn" id="1_sb3y7"]
 [ext_resource type="Texture2D" uid="uid://brllhaowk3gvj" path="res://assets/textures/space.png" id="2_wmikc"]
 
-[node name="WasdMovement" instance=ExtResource("1_sb3y7")]
+[node name="WasdMovement2" instance=ExtResource("1_sb3y7")]
 
-[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
+[node name="TextureRect" parent="Panel" index="0"]
 texture = ExtResource("2_wmikc")
 
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
-text = "Space"
-
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+[node name="Label" parent="Panel" index="1"]
 text = "Press space to jump"

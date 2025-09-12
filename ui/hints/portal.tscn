@@ -5,11 +5,8 @@
 
 [node name="WasdMovement" instance=ExtResource("1_k3gt6")]
 
-[node name="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/Control" index="0"]
+[node name="TextureRect" parent="Panel" index="0"]
 texture = ExtResource("2_sfdey")
 
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control" index="0"]
-text = "Portal"
-
-[node name="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Control2" index="0"]
+[node name="Label" parent="Panel" index="1"]
 text = "Go through the portal"
