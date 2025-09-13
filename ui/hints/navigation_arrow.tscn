@@ -8,7 +8,7 @@
 
 [sub_resource type="Gradient" id="Gradient_xcems"]
 interpolation_mode = 2
-colors = PackedColorArray(2, 2, 2, 0.379, 0, 0, 0, 0.490196)
+colors = PackedColorArray(2, 2, 2, 0.2, 0, 0, 0, 0.35)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1vpln"]
 gradient = SubResource("Gradient_xcems")
@@ -23,7 +23,7 @@ texture = SubResource("GradientTexture2D_1vpln")
 shader = ExtResource("5_aaadt")
 shader_parameter/clip_rect = Vector4(0, 0, 0, 0)
 shader_parameter/clip_enabled = false
-shader_parameter/bg_color = Color(0, 0, 0, 0.490196)
+shader_parameter/bg_color = Color(0, 0, 0, 0.35)
 shader_parameter/panel_size = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1o6q"]
