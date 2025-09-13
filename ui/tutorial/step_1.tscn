@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bopm80mgimtea"]
+[gd_scene load_steps=10 format=3 uid="uid://bopm80mgimtea"]
 
 [ext_resource type="PackedScene" uid="uid://dvgx53b4okdun" path="res://ui/tutorial/step_base.tscn" id="1_pfkwq"]
 [ext_resource type="Texture2D" uid="uid://g68mu6ynwrw" path="res://assets/textures/tutorial_step.png" id="3_0cov1"]
+[ext_resource type="Script" path="res://ui/tutorial/popup_anim.gd" id="3_k8k45"]
 [ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="4_ur2f6"]
 [ext_resource type="FontFile" uid="uid://bek4nfqxc8143" path="res://fonts/Inter-Italic.otf" id="5_thcf1"]
 [ext_resource type="Texture2D" uid="uid://d2nd4itkta7mx" path="res://assets/textures/button.png" id="5_wkkop"]
@@ -32,7 +33,9 @@ offset_right = 344.0
 offset_bottom = 331.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(344, 331)
 texture = ExtResource("3_0cov1")
+script = ExtResource("3_k8k45")
 
 [node name="MarginContainer" type="MarginContainer" parent="Welcome" index="0"]
 layout_mode = 1
@@ -132,5 +135,5 @@ They’re how you explore the new internet. Each world can connect to many other
 
 Let’s step through your very first portal."
 
-[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="TextureRect" method="set_visible" binds= [true]]
-[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="Welcome" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="TextureRect" method="show_popup_with_delay"]
+[connection signal="pressed" from="Welcome/MarginContainer/VBoxContainer/Control/Button" to="Welcome" method="hide_popup"]

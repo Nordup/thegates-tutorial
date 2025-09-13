@@ -51,8 +51,6 @@ func on_completed() -> void:
 
 
 func on_closed() -> void:
-	if _current_instance and is_instance_valid(_current_instance):
-		_current_instance.queue_free()
 	_current_instance = null
 
 	hint_events.resume_after_tutorial_closed()

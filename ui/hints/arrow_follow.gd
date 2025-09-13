@@ -11,6 +11,12 @@ extends Sprite2D
 var elapsed_time: float = 0.0
 
 
+func _ready() -> void:
+	visible = false
+	await get_tree().create_timer(0.2).timeout
+	visible = true
+
+
 func _process(delta: float) -> void:
 	elapsed_time += delta
 
