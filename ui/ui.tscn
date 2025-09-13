@@ -50,9 +50,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="MouseMode" type="Control" parent="."]
+[node name="MouseMode" type="Control" parent="." node_paths=PackedStringArray("tutorial_ui_manager")]
 anchors_preset = 0
 script = ExtResource("2_rhohj")
+tutorial_ui_manager = NodePath("../TutorialUI")
 
 [node name="HintManager" type="Control" parent="."]
 layout_mode = 1
