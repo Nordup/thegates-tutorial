@@ -78,7 +78,7 @@ theme_override_font_sizes/normal_font_size = 22
 text = "Goals: Learn the UI.
 Unlock the power of portals.
 
-Estimated duration: 2 minutes.
+Estimated duration: 1 minute.
 Steps: 0/3"
 
 [node name="Control" type="Control" parent="Welcome/MarginContainer/VBoxContainer" index="2"]
@@ -130,9 +130,9 @@ mouse_filter = 2
 visible = false
 
 [node name="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer" index="0"]
-text = "[b]Portals[/b] are like links in a website.
+text = "[b]Portals[/b] are the links of this 3D internet.
 
-They’re how you explore the new internet. Each world can connect to many others.
+Instead of clicking, you walk through to visit another world. Each world can link to many others.
 
 Let’s step through your very first portal."
 
