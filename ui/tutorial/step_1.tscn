@@ -20,7 +20,7 @@ font_color = Color(0.945098, 0.921569, 1, 1)
 
 [node name="Step" instance=ExtResource("1_pfkwq")]
 
-[node name="Welcome" type="TextureRect" parent="." index="1"]
+[node name="Welcome" type="TextureRect" parent="." index="1" node_paths=PackedStringArray("close")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,6 +36,7 @@ grow_vertical = 2
 pivot_offset = Vector2(344, 331)
 texture = ExtResource("3_0cov1")
 script = ExtResource("3_k8k45")
+close = NodePath("MarginContainer/VBoxContainer/Control/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="Welcome" index="0"]
 layout_mode = 1

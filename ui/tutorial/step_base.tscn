@@ -50,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wp7hc")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." node_paths=PackedStringArray("close")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,6 +66,7 @@ grow_vertical = 2
 pivot_offset = Vector2(344, 331)
 texture = ExtResource("3_0u84d")
 script = ExtResource("8_xj7vk")
+close = NodePath("MarginContainer/VBoxContainer/Control/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
