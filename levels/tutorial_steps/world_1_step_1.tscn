@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_3c4h5"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_0plcn"]
-[ext_resource type="Script" path="res://main/spawn_points.gd" id="5_7i5ax"]
+[ext_resource type="Script" uid="uid://doqqvkiny6h1w" path="res://main/spawn_points.gd" id="5_7i5ax"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="6_8o6qg"]
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="8_xxk56"]
 [ext_resource type="Resource" uid="uid://ctx2y84xsulik" path="res://resources/hint_events.res" id="9_ola2q"]
@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://clhcw4jv8srd3" path="res://addons/kenney_nature-kit/rock_smallG.glb" id="14_6jvpn"]
 [ext_resource type="PackedScene" uid="uid://dvrjbc3yn02q7" path="res://addons/kenney_nature-kit/rock_smallTopB.glb" id="15_2c0bu"]
 [ext_resource type="PackedScene" uid="uid://bp37lwiv38us1" path="res://addons/kenney_nature-kit/rock_smallFlatB.glb" id="15_inxj1"]
-[ext_resource type="Script" path="res://addons/yamms/MultiScatter.gd" id="16_jino7"]
+[ext_resource type="Script" uid="uid://cgrh0ihxouh0" path="res://addons/yamms/MultiScatter.gd" id="16_jino7"]
 [ext_resource type="ArrayMesh" uid="uid://brl27uqny8wdj" path="res://addons/kenney_nature-kit/meshes/grass.res" id="16_ocjpf"]
-[ext_resource type="Script" path="res://addons/yamms/MultiScatterItem.gd" id="18_5khia"]
-[ext_resource type="Script" path="res://addons/yamms/PMDropOnCollider.gd" id="19_y0swv"]
+[ext_resource type="Script" uid="uid://bpn7bhbnv2gk6" path="res://addons/yamms/MultiScatterItem.gd" id="18_5khia"]
+[ext_resource type="Script" uid="uid://xh040lrnhjux" path="res://addons/yamms/PMDropOnCollider.gd" id="19_y0swv"]
 [ext_resource type="ArrayMesh" uid="uid://c3lukokjh4whx" path="res://addons/kenney_nature-kit/meshes/plant_brushDetailed.res" id="20_d5sfr"]
 [ext_resource type="ArrayMesh" uid="uid://ct5btv7cwtoik" path="res://addons/kenney_nature-kit/meshes/plant_bushLargeTriangle.res" id="21_f770h"]
 [ext_resource type="ArrayMesh" uid="uid://bbdtkrln6pp3n" path="res://addons/kenney_nature-kit/meshes/flower_purpleA.res" id="22_q364a"]
@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://c6p24s6wm4ohl" path="res://addons/kenney_nature-kit/log_stack.glb" id="30_umfyj"]
 [ext_resource type="PackedScene" uid="uid://dfsen2wala0x2" path="res://addons/kenney_nature-kit/mushroom_redGroup.glb" id="31_lf8wx"]
 [ext_resource type="PackedScene" uid="uid://def4njgo0haci" path="res://addons/kenney_nature-kit/path_woodEnd.glb" id="32_q0mql"]
-[ext_resource type="Script" path="res://addons/yamms/MultiScatterExclude.gd" id="33_42rep"]
+[ext_resource type="Script" uid="uid://catips2ow7duc" path="res://addons/yamms/MultiScatterExclude.gd" id="33_42rep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gh5es"]
 size = Vector3(36.0083, 1.18225, 18.171)
@@ -310,8 +310,9 @@ point_count = 10
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.74806, -0.168904, 0.641777, 0.0253582, 0.959087, 0.281972, -0.663146, 0.227206, -0.713172, 0, 22.7338, 0)
+light_energy = 0.5
 shadow_enabled = true
-shadow_opacity = 0.57
+shadow_opacity = 0.79
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_3c4h5")

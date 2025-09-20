@@ -6,12 +6,12 @@
 background_mode = 2
 background_energy_multiplier = 0.8
 sky = ExtResource("1_6v7xd")
-ambient_light_color = Color(0.0313726, 0.317647, 0.4, 1)
+ambient_light_color = Color(0.3172, 0.47605997, 0.52, 1)
 ambient_light_sky_contribution = 0.53
-ambient_light_energy = 3.0
+ambient_light_energy = 2.0
 tonemap_mode = 2
 glow_enabled = true
 glow_blend_mode = 1
 adjustment_enabled = true
 adjustment_contrast = 1.2
-adjustment_saturation = 1.2
+adjustment_saturation = 1.1

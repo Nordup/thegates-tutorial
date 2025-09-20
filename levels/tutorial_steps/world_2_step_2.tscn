@@ -2,16 +2,16 @@
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_xitxc"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="2_6sjpq"]
-[ext_resource type="Script" path="res://main/spawn_points.gd" id="3_8s8cf"]
+[ext_resource type="Script" uid="uid://doqqvkiny6h1w" path="res://main/spawn_points.gd" id="3_8s8cf"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="4_tr0nf"]
 [ext_resource type="PackedScene" uid="uid://fua8vkhj15mh" path="res://addons/kenney_nature-kit/rock_tallA.glb" id="8_mpxaj"]
-[ext_resource type="Script" path="res://addons/yamms/MultiScatter.gd" id="9_itvs4"]
+[ext_resource type="Script" uid="uid://cgrh0ihxouh0" path="res://addons/yamms/MultiScatter.gd" id="9_itvs4"]
 [ext_resource type="PackedScene" uid="uid://ulfvvm32d52x" path="res://addons/kenney_nature-kit/rock_smallTopA.glb" id="10_586v6"]
 [ext_resource type="PackedScene" uid="uid://b5u7dcpkitc8y" path="res://levels/hints/hint_area.tscn" id="10_gmscl"]
 [ext_resource type="ArrayMesh" uid="uid://brl27uqny8wdj" path="res://addons/kenney_nature-kit/meshes/grass.res" id="10_scm26"]
 [ext_resource type="PackedScene" uid="uid://ih4yvy4qv51x" path="res://addons/kenney_nature-kit/rock_largeE.glb" id="11_87lkk"]
-[ext_resource type="Script" path="res://addons/yamms/MultiScatterItem.gd" id="11_pr187"]
-[ext_resource type="Script" path="res://addons/yamms/PMDropOnCollider.gd" id="12_vojyu"]
+[ext_resource type="Script" uid="uid://bpn7bhbnv2gk6" path="res://addons/yamms/MultiScatterItem.gd" id="11_pr187"]
+[ext_resource type="Script" uid="uid://xh040lrnhjux" path="res://addons/yamms/PMDropOnCollider.gd" id="12_vojyu"]
 [ext_resource type="ArrayMesh" uid="uid://ct5btv7cwtoik" path="res://addons/kenney_nature-kit/meshes/plant_bushLargeTriangle.res" id="13_173io"]
 [ext_resource type="ArrayMesh" uid="uid://c3lukokjh4whx" path="res://addons/kenney_nature-kit/meshes/plant_brushDetailed.res" id="14_q57o3"]
 [ext_resource type="ArrayMesh" uid="uid://bx61v8hkyaiqh" path="res://addons/kenney_nature-kit/meshes/tree_pineDefaultA.res" id="15_ll7u5"]
@@ -129,8 +129,9 @@ fov = 50.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.212719, 0.170457, -0.96213, -0.0218456, 0.98359, 0.179089, 0.976869, 0.0591139, -0.205505, 0, 7.7599, 0)
+light_energy = 0.5
 shadow_enabled = true
-shadow_opacity = 0.57
+shadow_opacity = 0.79
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_xitxc")
